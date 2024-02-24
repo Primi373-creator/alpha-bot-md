@@ -1,23 +1,25 @@
 {
-  "name": "inrl-bot-md",
-  "version": "4.1.1",
+  "name": "Alpha-md",
+  "version": "0.0.1",
   "description": "WhatsApp bot made with nodejs and baileys",
   "main": "index.js",
   "scripts": {
-    "start": "pm2 start . --attach --name bot",
-    "stop": "pm2 stop bot"
+    "start": "pm2 start . --attach --name Alpha",
+    "stop": "pm2 stop Alpha"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/inrl-official/inrl-bot-md.git test"
+    "url": "git+https://github.com/Cipher0071/iAlpha-md.git test"
   },
   "dependencies": {
+    "@shineiichijo/marika": "^2.0.3",
     "@adiwajshing/keyed-db": "^0.2.4",
     "@ffmpeg-installer/ffmpeg": "^1.1.0",
     "@vitalets/google-translate-api": "^9.2.0",
     "@whiskeysockets/baileys": "^6.6.0",
-    "node-cron":"3.0.3",
+    "node-cron": "3.0.3",
     "awesome-phonenumber": "^2.64.0",
+    "alpha-md": "https://github.com/Primi373-creator/alpha-md.git#main",
     "axios": "^0.27.2",
     "browser-id3-writer": "4.4.0",
     "cheerio": "^1.0.0-rc.10",
@@ -35,6 +37,7 @@
     "moment-timezone": "^0.5.34",
     "node-webpmux": "^3.1.1",
     "os": "^0.1.2",
+    "pastebin-js": "^1.0.6",
     "path": "^0.12.7",
     "pg": "^8.11.3",
     "pino": "^7.9.2",
