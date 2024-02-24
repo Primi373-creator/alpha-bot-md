@@ -2,13 +2,13 @@ const FormData = require('form-data');
 const axios = require('axios');
 
 const {
-	inrl,
+	Alpha,
 	mode,
 	lang,
 	config
 } = require('../lib');
 
-inrl({
+Alpha({
 	pattern: '$ocr',
 	fromMe: mode,
 	desc: lang.OCR.DESC,
@@ -26,7 +26,7 @@ inrl({
 	return await message.send(response.data.message);
 });
 
-inrl({
+Alpha({
 	pattern: 'meme',
 	fromMe: mode,
 	desc: 'add text over image',

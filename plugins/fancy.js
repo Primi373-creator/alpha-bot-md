@@ -1,5 +1,5 @@
 const {
-	inrl,
+	Alpha,
 	lang,
 	mode,
 	config,
@@ -7,7 +7,7 @@ const {
 } = require('../lib');
 const axios= require('axios');
 
-inrl({
+Alpha({
 	pattern: 'fancy ?(.*)',
 	type: 'utility',
 	fromMe: mode,

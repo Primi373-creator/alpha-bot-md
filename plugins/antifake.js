@@ -1,9 +1,9 @@
 const {
-    inrl,
+    Alpha,
     groupDB
 } = require('../lib')
 
-inrl({
+Alpha({
     pattern: 'antifake ?(.*)',
     desc: 'remove fake numbers',
     fromMe: true,

@@ -1,10 +1,10 @@
 const {
-    inrl,
+    Alpha,
     lang,
     addSpace
 } = require('../lib');
 
-inrl({
+Alpha({
     pattern: 'tag ?(.*)',
     desc: lang.TAG_DESC,
     type: "owner",

@@ -1,6 +1,6 @@
 //result from musixmatcH 
 const {
-	inrl,
+	Alpha,
 	mode,
 	fetchJson,
 	lang,
@@ -8,7 +8,7 @@ const {
 } = require('../lib');
 
 
-inrl({
+Alpha({
 	pattern: 'lyrics',
 	fromMe: mode,
 	desc: lang.LYRICS.DESC,

@@ -1,5 +1,5 @@
 const {
-  inrl,
+  Alpha,
   mode,
   lang,
   config
@@ -7,7 +7,7 @@ const {
 const fs = require("fs");
 const path = require("path");
 
-inrl(
+Alpha(
   {
     pattern: "sticker",
     fromMe: mode,

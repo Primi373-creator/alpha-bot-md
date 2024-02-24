@@ -1,10 +1,10 @@
 const {
-        inrl,
+        Alpha,
         broadcast
 } = require('../lib');
 
 
-inrl({
+Alpha({
         pattern: 'bcgroup ?(.*)',
         fromMe: true,
         desc: 'broadcast to all user in specified group',
@@ -15,7 +15,7 @@ if(!message.reply_message.i) return await message.send("*_please reply to a mess
 return await broadcast(message, match, "group");
 });
 
-inrl({
+Alpha({
         pattern: 'bcall ?(.*)',
         fromMe: true,
         desc: 'broadcast to all users',
@@ -25,7 +25,7 @@ if(!message.reply_message.i) return await message.send("*_please reply to a mess
 return await broadcast(message, match, "all");
 });
 
-inrl({
+Alpha({
         pattern: 'bcpm ?(.*)',
         fromMe: true,
         desc: 'broadcast to all your pm messages',
@@ -35,7 +35,7 @@ if(!message.reply_message.i) return await message.send("*_please reply to a mess
 return await broadcast(message, match, "pm");
 });
 
-inrl({
+Alpha({
         pattern: 'bcongroup ?(.*)',
         fromMe: true,
         desc: 'broadcast to all groups',

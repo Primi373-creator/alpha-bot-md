@@ -3,14 +3,14 @@ const FormData = require('form-data');
 const axios = require('axios');
 const path = './media/pdf';
 const {
-	inrl,
+	Alpha,
 	mode,
 	getRandom,
 	config
 } = require('../lib');
 
 
-inrl({
+Alpha({
 	pattern: 'pdf ?(.*)',
 	desc: "Images/texts to PDF",
 	type: 'converter',

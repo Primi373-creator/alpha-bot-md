@@ -1,9 +1,9 @@
 const {
-    inrl,
+    Alpha,
     groupDB
 } = require('../lib');
 
-inrl({
+Alpha({
     pattern: 'antipromote ?(.*)',
     desc: 'demote actor and re-promote demoted person',
     type: 'manage',

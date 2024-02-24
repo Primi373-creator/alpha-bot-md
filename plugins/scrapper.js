@@ -1,5 +1,5 @@
 const {
-    inrl,
+    Alpha,
     mode,
     weather,
     ringtone,
@@ -10,7 +10,7 @@ const {
 } = require('../lib');
 
 
-inrl({
+Alpha({
     pattern: 'google',
     fromMe: mode,
     desc: lang.SCRAP.GOOGLE_DESC,
@@ -25,7 +25,7 @@ inrl({
     }));
 });
 
-inrl({
+Alpha({
     pattern: 'ringtone',
     fromMe: mode,
     desc: lang.SCRAP.RING_DESC,
@@ -38,7 +38,7 @@ inrl({
         return await message.send(GenListMessage(lang.SCRAP.RING_LIST, res));
 });   
 
-inrl({
+Alpha({
     pattern: 'weather',
     fromMe: mode,
     desc: lang.SCRAP.WEATHER_DESC,
@@ -49,7 +49,7 @@ inrl({
         return await weather(message);
 });
 
-inrl({
+Alpha({
     on: "text",
     fromMe: mode,
 }, async (m, match) => {

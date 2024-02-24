@@ -1,5 +1,5 @@
 const {
-    inrl,
+    Alpha,
     mode,
     extractUrlsFromString,
     config,
@@ -7,7 +7,7 @@ const {
     getBuffer,
 } = require('../lib/');
 
-inrl({
+Alpha({
     pattern: 'fb ? (.*)',
     fromMe: mode,
     desc: 'download medias from Facebook',

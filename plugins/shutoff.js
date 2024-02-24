@@ -1,13 +1,13 @@
 const {
-	inrl,
+	Alpha,
 	personalDB
 } = require('../lib')
 const {
 	exec
 } = require("child_process");
 
-inrl({
-	pattern: 'shutoff ?(.*)',
+Alpha({
+	pattern: 'turnoff ?(.*)',
 	desc: 'turn off the bot',
 	type: 'owner',
 	usage: 'turnoff bot',
@@ -26,8 +26,8 @@ inrl({
 	return exec('pm2 restart all')
 });
 
-inrl({
-	pattern: 'shuton ?(.*)',
+Alpha({
+	pattern: 'turnon ?(.*)',
 	desc: 'turn on the bot',
 	type: 'owner',
 	usage: 'turnon bot',

@@ -1,4 +1,4 @@
-const { inrl } = require('../lib/');
+const { Alpha } = require('../lib/');
 
 let AFK = {
 	isAfk: false,
@@ -18,7 +18,7 @@ function secondsToHms(d) {
 	return hDisplay + mDisplay + sDisplay;
 }
 
-inrl({
+Alpha({
 	on: 'all',
 	fromMe: false
 }, async (message, match) => {
@@ -46,7 +46,7 @@ inrl({
 		}
 });
 
-inrl({
+Alpha({
 	on: 'text',
 	fromMe: true
 }, async (message, match) => {
@@ -57,7 +57,7 @@ inrl({
 		await message.send('```I am not AFK anymore!```');
 });
 
-inrl({
+Alpha({
 	pattern: 'afk ?(.*)',
 	fromMe: true,
 	desc: 'away from keyboard'

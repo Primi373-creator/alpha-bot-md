@@ -1,5 +1,5 @@
 const {
-    inrl,
+    Alpha,
     mode,
     sendPhoto,
     sendVoice,
@@ -22,7 +22,7 @@ const {
     config
 } = require('../lib');
 
-inrl({
+Alpha({
     pattern: 'photo ?(.*)',
     desc: lang.CONVERTER.PHOTO_DESC,
     type: "converter",
@@ -32,7 +32,7 @@ inrl({
     if(message.reply_message.isAnimatedSticker) return  await message.reply(lang.BASE.NEED.format("please reply to a non animated sticker"));
     return await sendPhoto(message);
 });
-inrl({
+Alpha({
     pattern: 'mp4 ?(.*)',
     desc: lang.CONVERTER.VIDEO_DESC,
     type: "converter",
@@ -45,7 +45,7 @@ inrl({
         mimetype: 'video/mp4',
     },'video')
 });
-inrl({
+Alpha({
     pattern: 'voice ?(.*)',
     desc: lang.CONVERTER.AUDIO_DESC,
     type: "converter",
@@ -58,7 +58,7 @@ inrl({
         ptt: true
     }, 'audio')
 });
-inrl({
+Alpha({
     pattern: 'gif ?(.*)',
     desc: lang.CONVERTER.GIF_DESC,
     type: "converter",
@@ -68,7 +68,7 @@ inrl({
     if (!message.reply_message.sticker || message.reply_message.video) return message.reply(lang.BASE.NEED.format("animated sticker/video message"));
     return await sendGif(message)
 });
-inrl({
+Alpha({
     pattern: 'bass ?(.*)',
     desc: lang.CONVERTER.AUDIO_EDIT_DESC,
     type: "audio-edit",
@@ -77,7 +77,7 @@ inrl({
     if (!message.reply_message.audio) return message.reply(lang.BASE.NEED.format("audio message"));
     return await sendBassAudio(message)
 });
-inrl({
+Alpha({
     pattern: 'slow ?(.*)',
     desc: lang.CONVERTER.AUDIO_EDIT_DESC,
     type: "audio-edit",
@@ -86,7 +86,7 @@ inrl({
     if (!message.reply_message.audio) return message.reply(lang.BASE.NEED.format("audio message"));
     return await sendSlowAudio(message)
 });
-inrl({
+Alpha({
     pattern: 'blown ?(.*)',
     desc: lang.CONVERTER.AUDIO_EDIT_DESC,
     type: "audio-edit",
@@ -95,7 +95,7 @@ inrl({
     if (!message.reply_message.audio) return message.reply(lang.BASE.NEED.format("audio message"));
     return await sendBlownAudio(message)
 });
-inrl({
+Alpha({
     pattern: 'deep ?(.*)',
     desc: lang.CONVERTER.AUDIO_EDIT_DESC,
     type: "audio-edit",
@@ -104,7 +104,7 @@ inrl({
     if (!message.reply_message.audio) return message.reply(lang.BASE.NEED.format("audio message"));
     return await sendDeepAudio(message);
 });
-inrl({
+Alpha({
     pattern: 'earrape ?(.*)',
     desc: lang.CONVERTER.AUDIO_EDIT_DESC,
     type: "audio-edit",
@@ -113,7 +113,7 @@ inrl({
     if (!message.reply_message.audio) return message.reply(lang.BASE.NEED.format("audio message"));
     return await sendErrapeAudio(message)
 });
-inrl({
+Alpha({
     pattern: 'fast ?(.*)',
     desc: lang.CONVERTER.AUDIO_EDIT_DESC,
     type: "audio-edit",
@@ -122,7 +122,7 @@ inrl({
     if (!message.reply_message.audio) return message.reply(lang.BASE.NEED.format("audio message"));
     return await sendFastAudio(message)
 });
-inrl({
+Alpha({
     pattern: 'fat ?(.*)',
     desc: lang.CONVERTER.AUDIO_EDIT_DESC,
     type: "audio-edit",
@@ -131,7 +131,7 @@ inrl({
     if (!message.reply_message.audio) return message.reply(lang.BASE.NEED.format("audio message"));
     return await sendFatAudio(message);
 });
-inrl({
+Alpha({
     pattern: 'nightcore ?(.*)',
     desc: lang.CONVERTER.AUDIO_EDIT_DESC,
     type: "audio-edit",
@@ -140,7 +140,7 @@ inrl({
     if (!message.reply_message.audio) return message.reply(lang.BASE.NEED.format("audio message"));
     return await sendNightcoreAudio(message);
 });
-inrl({
+Alpha({
     pattern: 'reverse ?(.*)',
     desc: lang.CONVERTER.AUDIO_EDIT_DESC,
     type: "audio-edit",
@@ -149,7 +149,7 @@ inrl({
     if (!message.reply_message.audio) return message.reply(lang.BASE.NEED.format("audio message"));
     return await sendReverseAudio(message);
 });
-inrl({
+Alpha({
     pattern: 'squirrel ?(.*)',
     desc: lang.CONVERTER.AUDIO_EDIT_DESC,
     type: "audio-edit",
@@ -159,7 +159,7 @@ inrl({
     return await sendSquirrelAudio(message);
 });
 
-inrl({
+Alpha({
     pattern: 'mp3 ?(.*)',
     desc: lang.CONVERTER.MP3_DESC,
     type: "converter",

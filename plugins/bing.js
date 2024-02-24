@@ -1,12 +1,12 @@
 const {
-	inrl,
+	Alpha,
 	mode,
 	config,
 	getBuffer,
 } = require('../lib');
 
 
-inrl({
+Alpha({
 	pattern: 'bing ?(.*)',
 	type: "eva",
 	fromMe: mode,

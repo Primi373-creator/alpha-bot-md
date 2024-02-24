@@ -23,14 +23,14 @@ function secondsToDhms(seconds) {
         return dDisplay + hDisplay + mDisplay + sDisplay;
 }
 const {
-        inrl,
+        Alpha,
         GenListMessage,
         lang,
         config
 } = require('../lib');
 
 
-inrl({
+Alpha({
         pattern: 'setvar ?(.*)',
         fromMe: true,
         desc: 'Set heroku config var',
@@ -38,7 +38,7 @@ inrl({
 }, async (message, match) => {
         if (!match) return await message.send('```Either Key or Value is missing```');
         const [key, value] = match.split(':');
-        if (!key || !value) return await message.send('setvar STICKER_DATA: inrl;md');
+        if (!key || !value) return await message.send('setvar STICKER_DATA: Alpha;md');
         await heroku.patch('/apps/' + process.env.HEROKU_APP_NAME + '/config-vars', {
                 body: {
                         [key.trim().toUpperCase()]: match.replace(key,'').replace(':','').trim()
@@ -49,7 +49,7 @@ inrl({
                 await message.send(`HEROKU : ${error.body.message}`)
         })
 })
-inrl({
+Alpha({
         pattern: 'delvar ?(.*)',
         fromMe: true,
         desc: 'Delete heroku config var',

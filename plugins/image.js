@@ -1,5 +1,5 @@
 const {
-    inrl,
+    Alpha,
     lang,
     mode,
     badWordDetect,
@@ -9,7 +9,7 @@ const {
 const fs = require('fs');
 
 
-inrl({
+Alpha({
     pattern: "img",
     usage: 'send google image result for give text',
     react: "🖼",

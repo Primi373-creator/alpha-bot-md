@@ -1,11 +1,11 @@
 const {
-    inrl,
+    Alpha,
     mode,
     TTS,
     lang
 } = require('../lib');
 
-inrl({
+Alpha({
     pattern: 'tts',
     fromMe: mode,
     desc: lang.TTS_DESC,

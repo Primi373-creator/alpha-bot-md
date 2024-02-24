@@ -1,11 +1,11 @@
 const {
-       inrl,
+       Alpha,
        lang,
        mode
 } = require('../lib');
 
 
-inrl({
+Alpha({
     pattern: 'ping ?(.*)',
     desc: lang.PING_DESC,
     react: "💯",

@@ -1,10 +1,10 @@
 const {
-    inrl,
+    Alpha,
     groupDB
 } = require('../lib');
 const actions = ['kick','warn','null']
 
-inrl({
+Alpha({
     pattern: 'antilink ?(.*)',
     desc: 'remove users who use bot',
     type: "manage",

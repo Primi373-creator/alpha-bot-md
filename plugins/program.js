@@ -1,5 +1,5 @@
 const {
-    inrl,
+    Alpha,
     mode,
     config,
     getJson
@@ -11,7 +11,7 @@ const postJson = async (id, options) => {
     return res.data;
 }
 
-inrl({
+Alpha({
     pattern: 'emorece ?(.*)',
     fromMe: mode,
     desc: "convert ASCII to morece",
@@ -29,7 +29,7 @@ inrl({
         quoted: message.data
     }, 'text');
 });
-inrl({
+Alpha({
     pattern: 'dmorece ?(.*)',
     fromMe: mode,
     desc: "decode morece to ASCII",
@@ -47,7 +47,7 @@ inrl({
         quoted: message.data
     }, 'text');
 });
-inrl({
+Alpha({
     pattern: 'ujs ?(.*)',
     desc: "minify JavaScript",
     fromMe: mode,
@@ -65,7 +65,7 @@ inrl({
         quoted: message.data
     }, 'text');
 });
-inrl({
+Alpha({
     pattern: 'ojs ?(.*)',
     fromMe: mode,
     desc: "obfuscate JavaScript",
@@ -83,7 +83,7 @@ inrl({
         quoted: message.data
     }, 'text');
 });
-inrl({
+Alpha({
     pattern: 'bjs ?(.*)',
     fromMe: mode,
     desc: "beautify JavaScript",
@@ -101,7 +101,7 @@ inrl({
         quoted: message.data
     }, 'text');
 });
-inrl({
+Alpha({
     pattern: 'bcss ?(.*)',
     fromMe: mode,
     desc: "beautify css",
@@ -120,7 +120,7 @@ inrl({
     }, 'text');
 
 });
-inrl({
+Alpha({
     pattern: 'bhtml ?(.*)',
     fromMe: mode,
     desc: "beautify html",

@@ -1,5 +1,5 @@
 const {
-    inrl,
+    Alpha,
     commands,
     send_alive,
     send_menu,
@@ -8,7 +8,7 @@ const {
     mode
 } = require('../lib')
 
-inrl({
+Alpha({
 	pattern: 'list',
 	desc: lang.LIST.DESC,
 	react: "💯",
@@ -27,7 +27,7 @@ inrl({
 	return await message.send(list);
 });
 
-inrl({
+Alpha({
     pattern: "menu",
     desc: lang.MENU.DESC,
     react: "📰",
@@ -37,7 +37,7 @@ inrl({
     return await send_menu(message, 'non button');
 });
 
-inrl({
+Alpha({
     pattern: "alive",
     desc: lang.ALIVE.DESC,
     react: "🥰",

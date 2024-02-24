@@ -1,11 +1,11 @@
 const {
-    inrl,
+    Alpha,
     groupDB,
     getLang,
     lang
 } = require('../lib');
 
-inrl({
+Alpha({
     pattern: 'filter ?(.*)',
     desc: lang.FILTERS.DESC,
     react: '🌝',
@@ -36,7 +36,7 @@ inrl({
 });
 
 
-inrl({
+Alpha({
     pattern: 'stop ?(.*)',
     desc: 'remove filters fromg group',
     react: '😫',

@@ -1,5 +1,5 @@
 const {
-	inrl,
+	Alpha,
 	mode,
 	getCompo,
 	sleep,
@@ -10,7 +10,7 @@ const {
 	WA_DEFAULT_EPHEMERAL
 } = require("@whiskeysockets/baileys");
 
-inrl({
+Alpha({
 	pattern: 'del',
 	desc: lang.WHATSAPP.DLT_DESC,
 	react: "⚒️",
@@ -23,7 +23,7 @@ inrl({
 		key: message.reply_message.data.key
 	}, {}, 'delete');
 });
-inrl({
+Alpha({
 	pattern: 'dlt',
 	desc: lang.WHATSAPP.DEL_DESC,
 	react: "🤌",
@@ -43,7 +43,7 @@ inrl({
 	}, {}, 'delete');
 })
 
-inrl({
+Alpha({
 	pattern: '$iswa ?(.*)',
 	fromMe: mode,
 	desc: lang.WHATSAPP.ISWA.ISWA_DISC,
@@ -101,7 +101,7 @@ inrl({
 });
 
 
-inrl({
+Alpha({
 	pattern: '$nowa ?(.*)',
 	fromMe: mode,
 	desc: lang.WHATSAPP.NOWA.DESC,
@@ -129,7 +129,7 @@ inrl({
 	return await m.editMessage(m.jid, bcs, key)
 });
 
-inrl({
+Alpha({
 	pattern: 'jid',
 	fromMe: mode,
 	desc: lang.USER.JID,
@@ -142,7 +142,7 @@ inrl({
 		await message.send(message.from)
 	}
 });
-inrl({
+Alpha({
 	pattern: 'block',
 	desc: lang.USER.BLOCK_DESC,
 	react: "💯",
@@ -155,7 +155,7 @@ inrl({
 		await message.client.updateBlockStatus(message.from, "block")
 	}
 }); // Block user
-inrl({
+Alpha({
 	pattern: 'unblock',
 	desc: lang.USER.UNBLOCK_DESC,
 	react: "💯",
@@ -168,7 +168,7 @@ inrl({
 		await message.client.updateBlockStatus(message.from, "unblock") // Unblock user
 	}
 });
-inrl({
+Alpha({
 	pattern: "pp",
 	desc: lang.USER.PP.DESC,
 	react: "😁",
@@ -180,7 +180,7 @@ inrl({
 	await message.client.updateProfilePicture(message.botNumber, download);
 	return message.reply(lang.USER.PP.SUCCESS);
 });
-inrl({
+Alpha({
 	pattern: "fullpp",
 	desc: lang.USER.FULL_PP.DESC,
 	react: "🔥",
@@ -193,7 +193,7 @@ inrl({
 	return message.reply(lang.USER.FULL_PP.SUCCESS);
 });
 
-inrl({
+Alpha({
 	pattern: 'clear ?(.*)',
 	fromMe: true,
 	desc: 'delete whatsapp chat',
@@ -209,7 +209,7 @@ inrl({
 	await message.send('_Cleared_')
 })
 
-inrl({
+Alpha({
 	pattern: 'archive ?(.*)',
 	fromMe: true,
 	desc: 'archive whatsapp chat',
@@ -227,7 +227,7 @@ inrl({
 	await message.send('_Archived_')
 })
 
-inrl({
+Alpha({
 	pattern: 'unarchive ?(.*)',
 	fromMe: true,
 	desc: 'unarchive whatsapp chat',
@@ -245,7 +245,7 @@ inrl({
 	await message.send('_Unarchived_')
 })
 
-inrl({
+Alpha({
 	pattern: 'chatpin ?(.*)',
 	fromMe: true,
 	desc: 'pin a chat',
@@ -257,7 +257,7 @@ inrl({
 	await message.send('_Pined_')
 })
 
-inrl({
+Alpha({
 	pattern: 'unpin ?(.*)',
 	fromMe: true,
 	desc: 'unpin a msg',
@@ -269,7 +269,7 @@ inrl({
 	await message.send('_Unpined_')
 })
 
-inrl({
+Alpha({
 	pattern: 'setbio ?(.*)',
 	fromMe: true,
 	desc: 'To change your profile status',
@@ -281,7 +281,7 @@ inrl({
 	await message.send('_Profile status updated_')
 })
 
-inrl({
+Alpha({
 	pattern: 'setname ?(.*)',
 	fromMe: true,
 	desc: 'To change your profile name',
@@ -293,7 +293,7 @@ inrl({
 	await message.send('_Profile name updated_')
 })
 
-inrl({
+Alpha({
 	pattern: 'disappear  ?(.*)',
 	fromMe: true,
 	desc: 'turn on default disappear messages',
@@ -307,7 +307,7 @@ inrl({
 	await message.send('_disappearmessage activated_')
 })
 
-inrl({
+Alpha({
 	pattern: 'getprivacy ?(.*)',
 	fromMe: true,
 	desc: 'get your privacy settings',
@@ -346,7 +346,7 @@ inrl({
 		caption: msg
 	}, 'image');
 })
-inrl({
+Alpha({
 	pattern: 'lastseen ?(.*)',
 	fromMe: true,
 	desc: 'to change lastseen privacy',
@@ -358,7 +358,7 @@ inrl({
 	await message.client.updateLastSeenPrivacy(match)
 	await message.send(`_Privacy settings *last seen* Updated to *${match}*_`);
 })
-inrl({
+Alpha({
 	pattern: 'online ?(.*)',
 	fromMe: true,
 	desc: 'to change online privacy',
@@ -370,7 +370,7 @@ inrl({
 	await message.client.updateOnlinePrivacy(match)
 	await message.send(`_Privacy Updated to *${match}*_`);
 })
-inrl({
+Alpha({
 	pattern: 'mypp ?(.*)',
 	fromMe: true,
 	desc: 'privacy setting profile picture',
@@ -382,7 +382,7 @@ inrl({
 	await message.client.updateProfilePicturePrivacy(match)
 	await message.send(`_Privacy Updated to *${match}*_`);
 })
-inrl({
+Alpha({
 	pattern: 'mystatus ?(.*)',
 	fromMe: true,
 	desc: 'privacy for my status',
@@ -394,7 +394,7 @@ inrl({
 	await message.client.updateStatusPrivacy(match)
 	await message.send(`_Privacy Updated to *${match}*_`);
 })
-inrl({
+Alpha({
 	pattern: 'read ?(.*)',
 	fromMe: true,
 	desc: 'privacy for read message',
@@ -406,7 +406,7 @@ inrl({
 	await message.client.updateReadReceiptsPrivacy(match)
 	await message.send(`_Privacy Updated to *${match}*_`);
 })
-inrl({
+Alpha({
 	pattern: 'groupadd ?(.*)',
 	fromMe: true,
 	desc: 'privacy for group add',

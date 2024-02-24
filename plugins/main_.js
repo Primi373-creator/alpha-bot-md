@@ -1,5 +1,5 @@
 const {
-    inrl,
+    Alpha,
     fetchJson,
     getBuffer,
     sendUrl,
@@ -11,7 +11,7 @@ const {
 } = require('../lib');
 const fs = require('fs');
 
-inrl({
+Alpha({
     pattern: 'url',
     desc: lang.GENERAL.URL_DESC,
     react: "⛰️",
@@ -22,7 +22,7 @@ inrl({
     return await sendUrl(message, message.client);
 });
 
-inrl({
+Alpha({
     pattern: 'take',
     desc: lang.GENERAL.TAKE_DESC,
     react: "⚒️",
@@ -49,7 +49,7 @@ inrl({
             },'audio');
         }
     })
-inrl({
+Alpha({
     pattern: 'emix',
     desc: lang.GENERAL.EMIX_DESC,
     react: "🤌",

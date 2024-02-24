@@ -1,5 +1,5 @@
-const { inrl, GPT, mode, config,getJson} = require('../lib/');
-inrl({
+const { Alpha, GPT, mode, config,getJson} = require('../lib/');
+Alpha({
     pattern: "gpt",
     desc: 'get open ai chatgpt response',
     type: "eva",

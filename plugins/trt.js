@@ -1,6 +1,6 @@
-const { TRT, mode, inrl, lang } = require('../lib');
+const { TRT, mode, Alpha, lang } = require('../lib');
 
-inrl(
+Alpha(
 	{
 		pattern: 'trt ?(.*)',
 		fromMe: mode,

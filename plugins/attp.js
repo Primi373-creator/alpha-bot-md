@@ -1,29 +1,29 @@
-const {
-    inrl,
-    getBuffer,
-    lang,
-    mode,
-    config
-} = require('../lib');
-inrl({
+const { Alpha, getBuffer, lang, mode, config } = require("../lib");
+Alpha(
+  {
     pattern: "ttp",
     type: "misc",
     fromMe: mode,
-    desc: lang.TTP.DESC
-}, async (message, match) => {
+    desc: lang.TTP.DESC,
+  },
+  async (message, match) => {
     match = match || message.reply_message.text;
     if (!match) return await message.send(lang.BASE.TEXT);
-    const res = `${config.BASE_URL}api/ttp?text=${match}`
-    return await message.send({url: res}, {},'image');
-});
-inrl({
+    const res = `${config.BASE_URL}api/ttp?text=${match}`;
+    return await message.send({ url: res }, {}, "image");
+  },
+);
+Alpha(
+  {
     pattern: "attp",
     type: "misc",
-    fromMe: mode, 
-    desc: lang.TTP.DESC
-}, async (message, match) => {
+    fromMe: mode,
+    desc: lang.TTP.DESC,
+  },
+  async (message, match) => {
     match = match || message.reply_message.text;
     if (!match) return await message.send(lang.BASE.TEXT);
     const res = await getBuffer(`${config.BASE_URL}api/attp?text=${match}`);
-    return await message.send(res,{},'sticker');
-});
+    return await message.send(res, {}, "sticker");
+  },
+);

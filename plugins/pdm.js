@@ -1,10 +1,10 @@
 const {
-    inrl,
+    Alpha,
     groupDB,
     config
 } = require('../lib');
 
-inrl({
+Alpha({
     pattern: 'pdm ?(.*)',
     desc: 'promote, demote message',
     type: 'manage',

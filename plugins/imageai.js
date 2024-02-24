@@ -1,12 +1,12 @@
 const {
-        inrl,
+        Alpha,
         mode,
         badWordDetect,
         config,
         getJson 
 } = require('../lib/');
 
-inrl({
+Alpha({
         pattern: '$imageai',
         desc: 'generate image with ai',
         react: "🤩",

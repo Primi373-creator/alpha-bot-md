@@ -1,4 +1,4 @@
-const{inrl}=require('../lib');
+const{Alpha}=require('../lib');
 const {
     extensionForMediaMessage,
     extractMessageContent,
@@ -25,7 +25,7 @@ const axios = require('axios');
 const path = require('path');
 const cheerio = require('cheerio');
 
-inrl({
+Alpha({
                 on: "all",
                 fromMe :true,
                 onlyPm :false,

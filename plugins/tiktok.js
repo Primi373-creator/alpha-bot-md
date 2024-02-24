@@ -1,5 +1,5 @@
 const {
-    inrl,
+    Alpha,
     mode,
     extractUrlsFromString
 } = require('../lib/');
@@ -8,7 +8,7 @@ const {
     BASE_URL
 } = require('../config');
 
-inrl({
+Alpha({
     pattern: 'tiktok ? (.*)',
     fromMe: mode,
     desc: 'download medias frok Facebook',

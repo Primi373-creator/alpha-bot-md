@@ -1,10 +1,10 @@
 const {
-       inrl,
+       Alpha,
        mode
 } = require('../lib');
 const { fromBuffer } = require('file-type');
 
-inrl({
+Alpha({
     pattern: 'doc ?(.*)',
     desc: "convert media to document",
     react: "🔂",

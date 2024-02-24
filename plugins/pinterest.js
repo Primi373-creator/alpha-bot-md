@@ -1,12 +1,12 @@
 const {
-	inrl,
+	Alpha,
 	mode,
 	isUrl,
 	getJson,
 	config
 } = require('../lib');
 
-inrl({
+Alpha({
 		pattern: "pindl",
 	        fromMe: mode,
 		desc: "pinterest download",
@@ -23,7 +23,7 @@ inrl({
 		await message.sendFromUrl(result.url);
 	});
 
-inrl({
+Alpha({
 		pattern: "pins",
 	        fromMe: mode,
 		desc: "pinterest search",

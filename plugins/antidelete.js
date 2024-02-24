@@ -1,9 +1,9 @@
 const {
-    inrl,
+    Alpha,
     groupDB
 } = require('../lib');
 
-inrl({
+Alpha({
     pattern: 'antidelete ?(.*)',
     desc: 'forward deleted messages',
     type: 'manage',

@@ -1,5 +1,5 @@
 const {
-	inrl,
+	Alpha,
 	extractUrlsFromString,
 	searchYT,
 	getYTInfo,
@@ -13,7 +13,7 @@ const {
 	mode
 } = require('../lib');
 
-inrl({
+Alpha({
 	pattern: 'play',
 	type: "downloader",
 	desc: lang.YT.PLAY_DESC,
@@ -46,7 +46,7 @@ inrl({
 			}, "image");
 		}
 });
-inrl({
+Alpha({
 	on: 'text',
 	fromMe: mode
 }, async (message, match) => {

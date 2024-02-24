@@ -1,6 +1,6 @@
-const {inrl,WCG} = require("../lib")
+const {Alpha,WCG} = require("../lib")
 
-inrl({
+Alpha({
     on: "text",
     pattern: "wcg",
     type: "game",

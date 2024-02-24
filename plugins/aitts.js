@@ -1,15 +1,14 @@
-const {
-	inrl,
-	mode,
-	elevenlabs
-} = require('../lib');
-inrl({
-	pattern: "aitts",
-	type: "eva",
-	fromMe: mode,
-	desc: 'gernate ai voices'
-}, async (message, match) => {
-	if (match == 'list') return await message.send(`╭「 *List of Aitts* 」
+const { Alpha, mode, elevenlabs } = require("../lib");
+Alpha(
+  {
+    pattern: "aitts",
+    type: "eva",
+    fromMe: mode,
+    desc: "gernate ai voices",
+  },
+  async (message, match) => {
+    if (match == "list")
+      return await message.send(`╭「 *List of Aitts* 」
  ├ 1 _rachel_ 
  ├ 2 _clyde_ 
  ├ 3 _domi_ 
@@ -49,14 +48,25 @@ inrl({
  ├ 37 _glinda_ 
  ├ 38 _giovanni_ 
  ├ 39 _mimi_ 
- └`)
-	const [v, k] = match.split(/,;|/);
-	if (!k) return await message.send(`*_need voice id and text_*\n_example_\n\n_*aitts* hey vroh its a test,adam_\n_*aitts list*_`)
-	const stream = await elevenlabs(match);
-	if (!stream) return await message.send(`_*please upgrade your api key*_\n_get key from http://docs.elevenlabs.io/api-reference/quick-start/introduction_\n_example_\n\nsetvar elvenlabs: your key\n_or update your config.js manually_`);
-	return await message.send({
-		stream
-	}, {
-		mimetype: 'audio/mpeg'
-	}, 'audio')
-})
+ └`);
+    const [v, k] = match.split(/,;|/);
+    if (!k)
+      return await message.send(
+        `*_need voice id and text_*\n_example_\n\n_*aitts* hey vroh its a test,adam_\n_*aitts list*_`,
+      );
+    const stream = await elevenlabs(match);
+    if (!stream)
+      return await message.send(
+        `_*please upgrade your api key*_\n_get key from http://docs.elevenlabs.io/api-reference/quick-start/introduction_\n_example_\n\nsetvar elvenlabs: your key\n_or update your config.js manually_`,
+      );
+    return await message.send(
+      {
+        stream,
+      },
+      {
+        mimetype: "audio/mpeg",
+      },
+      "audio",
+    );
+  },
+);

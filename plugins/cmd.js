@@ -1,10 +1,10 @@
 const {
-    inrl,
+    Alpha,
     personalDB,
     lang
 } = require("../lib")
 
-inrl({
+Alpha({
     pattern: 'setcmd',
     desc: lang.MEDIA_CMD.SET_DESC,
     react: "😛",
@@ -17,7 +17,7 @@ inrl({
     await personalDB(['sticker_cmd'], {content:{[match]: message.reply_message.msg.fileSha256.join("")}},'add');
     return await message.reply(lang.BASE.SUCCESS)
 });
-inrl({
+Alpha({
     pattern: 'dltcmd',
     desc: lang.MEDIA_CMD.DEL_DESC,
     react: "💥",
@@ -28,7 +28,7 @@ inrl({
     await personalDB(['sticker_cmd'], {content:{id: match}},'delete');
     return await message.reply(lang.BASE.SUCCESS)
 });
-inrl({
+Alpha({
     pattern: 'getcmd',
     desc: lang.MEDIA_CMD.GET_DESC,
     react: "💥",

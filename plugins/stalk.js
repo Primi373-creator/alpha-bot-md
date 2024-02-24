@@ -1,12 +1,12 @@
 const {
-	inrl,
+	Alpha,
 	mode,
 	config,
 	getJson,
 	getBuffer
 } = require('../lib')
 
-inrl({
+Alpha({
     pattern: 'ig ?(.*)',
     fromMe: mode,
     desc: 'Insta Profile Search',
@@ -32,7 +32,7 @@ async (message, match) => {
     );
 });
 
-inrl({
+Alpha({
 		pattern: 'ytc ?(.*)',
 	        fromMe: mode,
 		desc: 'stalk yt channel',
@@ -69,7 +69,7 @@ inrl({
 		)
 	}
 )
-inrl({
+Alpha({
 		pattern: 'git ?(.*)',
 	        fromMe: mode,
 		desc: 'stalk git user name',

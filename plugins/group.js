@@ -1,5 +1,5 @@
 const {
-	inrl,
+	Alpha,
 	isAdmin,
 	isBotAdmin,
 	getString,
@@ -10,7 +10,7 @@ const {
 
 
 
-inrl({
+Alpha({
 	pattern: 'promote ?(.*)',
 	type: 'group',
 	fromMe: true,
@@ -29,7 +29,7 @@ inrl({
 		mentions: [message.reply_message.sender]
 	})
 });
-inrl({
+Alpha({
 	pattern: 'demote ?(.*)',
 	type: 'group',
 	fromMe: true,
@@ -48,7 +48,7 @@ inrl({
 		mentions: [message.reply_message.sender]
 	})
 });
-inrl({
+Alpha({
 	pattern: 'kick ?(.*)',
 	type: 'group',
 	fromMe: true,
@@ -86,7 +86,7 @@ inrl({
 		return await message.reply('all group Participants will been kicked!')
 	}
 });
-inrl({
+Alpha({
 	pattern: 'add ?(.*)',
 	type: 'group',
 	fromMe: true,
@@ -134,7 +134,7 @@ inrl({
 		}
 	}
 });
-inrl({
+Alpha({
 	pattern: 'gpp ?(.*)',
 	type: 'group',
 	fromMe: true,
@@ -152,7 +152,7 @@ inrl({
 	await message.client.updateProfilePicture(message.jid, download);
 	return message.reply(lang.GROUP.GPP.INFO);
 })
-inrl({
+Alpha({
 	pattern: 'fullgpp ?(.*)',
 	type: 'group',
 	fromMe: true,
@@ -169,7 +169,7 @@ inrl({
 	await message.updateProfilePicture(message.jid, download);
 	return message.reply(lang.GROUP.FULL_GPP.INFO);
 });
-inrl({
+Alpha({
 	pattern: 'gname ?(.*)',
 	type: 'group',
 	fromMe: true,
@@ -186,7 +186,7 @@ inrl({
 	await message.client.groupUpdateSubject(message.jid, txt);
 	return await message.send(lang.GROUP.G_NAME.SUCCESS)
 });
-inrl({
+Alpha({
 	pattern: 'gdesc ?(.*)',
 	type: 'group',
 	fromMe: true,
@@ -203,7 +203,7 @@ inrl({
 	await message.client.groupUpdateDescription(message.jid, txt);
 	return await message.send(lang.GROUP.G_DESC.SUCCESS)
 });
-inrl({
+Alpha({
 	pattern: 'mute ?(.*)',
 	type: 'group',
 	fromMe: true,
@@ -218,7 +218,7 @@ inrl({
 	await message.client.groupSettingUpdate(message.jid, "announcement");
 	return await message.send(lang.GROUP.MUTE.SUCCESS)
 });
-inrl({
+Alpha({
 	pattern: 'unmute ?(.*)',
 	type: 'group',
 	fromMe: true,
@@ -233,7 +233,7 @@ inrl({
 	await message.client.groupSettingUpdate(message.jid, "not_announcement");
 	return await message.send(lang.GROUP.UNMUTE.SUCCESS)
 });
-inrl({
+Alpha({
 	pattern: 'lock ?(.*)',
 	type: 'group',
 	fromMe: true,
@@ -248,7 +248,7 @@ inrl({
 	await message.client.groupSettingUpdate(message.jid, "locked");
 	return await message.send(lang.GROUP.LOCK.SUCCESS)
 });
-inrl({
+Alpha({
 	pattern: 'unlock ?(.*)',
 	type: 'group',
 	fromMe: true,
@@ -263,7 +263,7 @@ inrl({
 	await message.client.groupSettingUpdate(message.jid, "unlocked");
 	return await message.send(lang.GROUP.UNLOCK.SUCCESS)
 });
-inrl({
+Alpha({
 	pattern: 'left ?(.*)',
 	type: 'group',
 	onlyGroup: true,
@@ -272,7 +272,7 @@ inrl({
 }, async (message, match) => {
 	await message.client.groupLeave(message.jid)
 });
-inrl({
+Alpha({
 	pattern: 'invite ?(.*)',
 	type: 'group',
 	onlyGroup: true,
@@ -287,7 +287,7 @@ inrl({
 	const code = await message.client.groupInviteCode(message.jid);
 	return await message.send(lang.GROUP.INVITE.INFO.format(`https://chat.whatsapp.com/${code}`))
 });
-inrl({
+Alpha({
 	pattern: 'revoke ?(.*)',
 	type: 'group',
 	fromMe: true,
@@ -302,7 +302,7 @@ inrl({
 	await message.client.groupRevokeInvite(message.jid);
 	return await message.send(lang.GROUP.REVOKE.INFO)
 });
-inrl({
+Alpha({
 	pattern: 'join ?(.*)',
 	type: 'owner',
 	fromMe: true,
@@ -315,7 +315,7 @@ inrl({
 	const response = await message.client.groupAcceptInvite(urlArray[3]);
 	return await message.send(lang.BASE.SUCCESS)
 });
-inrl({
+Alpha({
 	pattern: 'getinfo ?(.*)',
 	type: 'group',
 	fromMe: true,

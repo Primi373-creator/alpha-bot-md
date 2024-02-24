@@ -1,12 +1,12 @@
 const {
-        inrl,
+        Alpha,
         mode,
         config,
         getJson
 } = require("../lib/");
 const jimp = require('jimp');
 const QRReader = require('qrcode-reader')
-inrl({
+Alpha({
         pattern: 'qr ?(.*)',
         fromMe: mode,
         desc: 'qr code reader & generater',

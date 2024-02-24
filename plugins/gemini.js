@@ -1,12 +1,12 @@
 const {
-	inrl,
+	Alpha,
 	mode,
 	config,
 	getJson,
 } = require('../lib');
 
 
-inrl({
+Alpha({
 	pattern: 'gemini ?(.*)',
 	type: "eva",
 	fromMe: mode,

@@ -1,5 +1,5 @@
 const {
-    inrl,
+    Alpha,
     runtime,
     personalDB,
     extractUrlsFromString,
@@ -13,7 +13,7 @@ const {
 const axios = require("axios");
 const fs = require("fs");
 
-inrl({
+Alpha({
     pattern: 'restart ?(.*)',
     desc: lang.RESTART.DESC,
     react: "🥱",
@@ -23,7 +23,7 @@ inrl({
     await message.reply(lang.RESTART.INFO)
     exec('pm2 restart all')
 })
-inrl({
+Alpha({
     pattern: 'plugin ?(.*)',
     desc: lang.EXTERNAL_PLUGIN.DESC,
     react: "🦥",
@@ -78,7 +78,7 @@ inrl({
         return await message.reply(text)
     }
 })
-inrl({
+Alpha({
     pattern: 'remove ?(.*)',
     desc: lang.EXTERNAL_PLUGIN.REMOVE_DESC,
     react: "😶",

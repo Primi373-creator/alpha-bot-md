@@ -1,12 +1,12 @@
 const {
-	inrl,
+	Alpha,
 	mode,
 	config,
 	getBuffer,
 } = require('../lib');
 
 
-inrl({
+Alpha({
 	pattern: 'diffusion ?(.*)',
 	type: "eva",
 	desc: "stable diffusion ai",

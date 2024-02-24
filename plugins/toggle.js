@@ -1,12 +1,12 @@
 const {
-        inrl,
+        Alpha,
         commands,
         sleep,
         personalDB,
         lang
 } = require('../lib');
 
-inrl({
+Alpha({
         pattern: 'toggle ?(.*)',
         fromMe: true,
         desc: lang.TOGGLE.DESC,

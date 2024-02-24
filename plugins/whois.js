@@ -1,7 +1,7 @@
-const { inrl, mode } = require('../lib');
+const { Alpha, mode } = require('../lib');
 
 
-inrl({
+Alpha({
         pattern: 'whois ?(.*)',
         fromMe: mode,
         type: 'info',

@@ -1,5 +1,5 @@
 const {
-	inrl,
+	Alpha,
 	config,
 	getJson,
 	lang,
@@ -7,7 +7,7 @@ const {
 } = require('../lib');
 
 
-inrl({
+Alpha({
 	pattern: 'apk ?(.*)',
 	type: "downloader",
 	desc: "download applications from aptoid",

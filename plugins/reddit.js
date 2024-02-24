@@ -1,11 +1,11 @@
 const {
-        inrl,
+        Alpha,
         mode,
         config,
         getJson
 } = require('../lib');
 
-inrl({
+Alpha({
         pattern: 'reddit',
         type: "search",
         fromMe: mode,
