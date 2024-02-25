@@ -171,12 +171,14 @@ const WhatsBotConnect = async () => {
     const { state, saveCreds } = await useMultiFileAuthState(
       __dirname + "/auth_info_baileys",
     );
-    const logger = pino({
-      level: "silent",
-    });
     let conn = await WASocket({
-      logger,
-      browser: Browsers.macOS("Desktop"),
+      logger: pino({ level: "fatal" }),
+      printQRInTerminal: true,
+      browser: ["CIPHER", "safari", "1.0.0"],
+      fireInitQueries: false,
+      shouldSyncHistoryMessage: false,
+      downloadHistory: false,
+      syncFullHistory: false,
       auth: state,
       generateHighQualityLinkPreview: true,
       getMessage: async (key) => {
