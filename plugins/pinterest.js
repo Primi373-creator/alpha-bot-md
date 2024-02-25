@@ -10,7 +10,7 @@ Alpha({
 		pattern: "pindl",
 	        fromMe: mode,
 		desc: "pinterest download",
-		type: "download",
+		type: "downloader",
 	},
 	async (message, match) => {
 		if (!match) return await message.send('Please provide a Pinterest URL');

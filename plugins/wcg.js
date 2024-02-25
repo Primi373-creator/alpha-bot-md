@@ -3,7 +3,7 @@ const {Alpha,WCG} = require("../lib")
 Alpha({
     on: "text",
     pattern: "wcg",
-    type: "game",
+    type: "fun",
     desc: "Word Chain game",
     fromMe: false,
     onlyGroup: true

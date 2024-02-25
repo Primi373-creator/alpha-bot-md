@@ -5,7 +5,7 @@ Alpha(
     pattern: "dob",
     fromMe: mode,
     desc: "get birth details",
-    type: "information",
+    type: "info",
   },
   async (message, match) => {
     if (!match)
@@ -54,7 +54,7 @@ Alpha(
     pattern: "country",
     fromMe: mode,
     desc: "get country details",
-    type: "information",
+    type: "info",
   },
   async (message, match) => {
     if (!match)
@@ -125,7 +125,7 @@ Alpha(
     pattern: "checkapi",
     fromMe: mode,
     desc: "check inrlkey",
-    type: "information",
+    type: "info",
   },
   async (message, match) => {
     const {

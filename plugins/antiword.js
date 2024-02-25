@@ -7,7 +7,7 @@ const actions = ['kick','warn','null']
 Alpha({
     pattern: 'antiword ?(.*)',
     desc: 'remove users who use restricted words',
-    type: "manage",
+    type: 'group',
     onlyGroup: true,
     fromMe: true 
 }, async (message, match) => {

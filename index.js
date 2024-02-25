@@ -133,10 +133,8 @@ store.poll_message = {
 const WhatsBotConnect = async () => {
   console.log("generating session!!");
   /*if (!config.SESSION_ID) {
-		console.log('please provide a session id in config.js\n\nscan from inrl server');
-		console.log('please provide a session id in config.js\n\nscan from inrl server');
-		console.log('please provide a session id in config.js\n\nscan from inrl server');
-		await sleep(10000);
+		console.log('please provide a session id in config.js\n\nscan from Alpha server');
+		await sleep(5000);
 		process.exit(1);
 	}
 	if (!fs.existsSync("./auth_info_baileys")) {
@@ -147,24 +145,21 @@ const WhatsBotConnect = async () => {
 		});
 		fs.mkdirSync('./auth_info_baileys');
 	}
-	try {
-		let {
-			data
-		} = await axios.post(config.BASE_URL + 'admin/session', {
-			id: config.SESSION_ID,
-			key: "with_you"
-		})
-		const file_names = Object.keys(data);
-		file_names.map(a => {
-			fs.writeFileSync(`./auth_info_baileys/${a}`, JSON.stringify(data[a]), "utf8")
+  console.log('generating session!!')
+	if (!config.SESSION_ID) {
+		console.log('please provide a session id in config.js\n\nscan from Alpha-md server');
+		await sleep(10000);
+		process.exit(1);
+	}
+if (!fs.existsSync("./auth_info_baileys")) {
+		let dir = await fs.mkdirSync('./auth_info_baileys');
+	} else {
+		const files = await fs.rmSync('./auth_info_baileys', {
+			recursive: true
 		});
-	} catch (e) {
-		console.log("rebooting");
-		console.log("rebooting");
-		await sleep(15000);
-		process.exit(0);
-	}*/
-  console.log(`auth file loaded from db`);
+		fs.mkdirSync('./auth_info_baileys');
+	}
+  console.log(`auth file loaded from db`);*/
   try {
     console.log("Syncing Database");
     await config.DATABASE.sync();
@@ -187,7 +182,7 @@ const WhatsBotConnect = async () => {
           return msg.message || undefined;
         }
         return {
-          conversation: "Hai Im whatspp bot",
+          conversation: "Hi Im Alpha-md",
         };
       },
     });
@@ -200,7 +195,7 @@ const WhatsBotConnect = async () => {
         return msg?.message;
       }
       return {
-        conversation: "Hai im whatsapp bot",
+        conversation: "Hi im Alpha-md",
       };
     }
     conn = new WAConnection(conn);
@@ -1798,7 +1793,7 @@ const WhatsBotConnect = async () => {
           }
         });
         console.log("plugin installed successfully");
-        console.log("Login successful! \n bot working now");
+        console.log("Login successful!");
         if (login != "true" && shutoff != "true") {
           if (start_msg && start_msg.status && start_msg.data) {
             await conn.sendMessage(conn.user.id, {
@@ -1814,25 +1809,21 @@ const WhatsBotConnect = async () => {
             );
             let start_msg =
               "```" +
-              `bot working now!!\n\n\nversion : ${require("./package.json").version}\nplugins : ${commands.length.toString()}\nexternel : ${ext_plugins}\nmode : ${config.WORKTYPE}\nprefix : ${config.PREFIX}\n${config.BASE_URL}info/bot/vars` +
+              `Alpha-md connected!!\nversion : ${require("./package.json").version}\nplugins : ${commands.length.toString()}\nexternal plugins : ${ext_plugins}\nmode : ${config.WORKTYPE}\nsudo:${config.SUDO}\nprefix : ${config.PREFIX}\n${config.ALPHA_URL}` +
               "```\n\n";
-            for (const key in config) {
-              if (
-                key != "DATABASE" &&
-                key != "BASE_URL" &&
-                key != "HEROKU" &&
-                key != "SESSION_ID"
-              ) {
-                start_msg += `_*${key}* : ${config[key] == true ? config[key] + " ✅" : config[key] == false ? config[key] + " ❎" : config[key]}_\n`;
-              }
-            }
+              const propertiesToCheck = ['STATUS_VIEW', 'SAVE_STATUS', 'ADMIN_SUDO_ACCESS', 'ALWAYS_ONLINE'];
+           for (const key of propertiesToCheck) {
+           if (key in config) {
+        start_msg += `_*${key}* : ${config[key] ? '✅' : '❌'}_\n`;
+    }
+}
             await conn.sendMessage(conn.user.id, {
               text: start_msg,
             });
           }
         } else if (shutoff != "true")
           await conn.sendMessage(conn.user.id, {
-            text: "_bot restated_",
+            text: "_Alpha-md restarted_",
           });
         if (toMessage(config.BGM_URL)) {
           try {
@@ -2142,7 +2133,7 @@ const WhatsBotConnect = async () => {
             return;
           if (blocked_users && blocked_users.data.includes(m.jid.split("@")[0]))
             return;
-          config.ALLWAYS_ONLINE
+          config.ALWAYS_ONLINE
             ? await conn.sendPresenceUpdate("available", m.jid)
             : await conn.sendPresenceUpdate("unavailable", m.jid);
           if (chatUpdate.messages[0].key.remoteJid == "status@broadcast") {
@@ -2544,7 +2535,7 @@ const WhatsBotConnect = async () => {
 │ User :-@${m.number}
 ❏────────────────❏
 ┏────── INFO ──────❏
-│ Reason :- The law in the group was not accepted
+│ Reason :- read the description!!!
 │ Count :- ${count}
 │ Remaining :- ${remains}
 ┗•───────────────❏`;
@@ -2626,7 +2617,7 @@ const WhatsBotConnect = async () => {
 │ User :-@${m.number}
 ❏────────────────❏
 ┏────── INFO ──────❏
-│ Reason :- The law in the group was not accepted
+│ Reason :- read the description!!!
 │ Count :- ${count}
 │ Remaining :- ${remains}
 ┗•───────────────❏`;
@@ -2713,7 +2704,7 @@ const WhatsBotConnect = async () => {
 │ User :-@${m.number}
 ❏────────────────❏
 ┏─────── INFO ─────❏
-│ Reason :- The law in the group was not accepted
+│ Reason :- read the description!!!
 │ Count :- ${count}
 │ Remaining :- ${remains}
 ┗•───────────────❏`;
@@ -2824,7 +2815,7 @@ const WhatsBotConnect = async () => {
           let owner_msg;
           try {
             owner_msg = (
-              await axios(config.BASE_URL + "admin/get_update?key=with_you")
+              await axios(config.ALPHA_URL + "get_update")
             ).data;
           } catch {
             owner_msg = false;
@@ -2854,7 +2845,7 @@ const WhatsBotConnect = async () => {
               },
               "set",
             );
-            const update_msg = "there have some updates";
+            const update_msg = "there are some updates";
             let description = "";
             commits["all"].map((commit) => {
               description += `_*date:* ${commit.date.substring(0, 10)}_\n_*message* ${commit.message}_\n_*commited by:* ${commit.author_name}_\n\n`;
@@ -2882,7 +2873,7 @@ const WhatsBotConnect = async () => {
   }
 }; // function closing
 app.get("/md", (req, res) => {
-  res.send("Hello Inrl started\nversion: " + require("./package.json").version);
+  res.send("Hello Alpha-md started\nversion: " + require("./package.json").version);
 });
 app.use(async (req, res) => {
   setInterval(async (o) => {
@@ -2895,6 +2886,6 @@ app.use(async (req, res) => {
   res.redirect("/md");
 });
 app.listen(config.PORT, () =>
-  console.log(`Inrl Server listening on port http://localhost:${config.PORT}`),
+  console.log(`Alpha-md Server listening on port http://localhost:${config.PORT}`),
 );
 WhatsBotConnect().catch((e) => console.log(e));

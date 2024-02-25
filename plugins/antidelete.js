@@ -6,7 +6,7 @@ const {
 Alpha({
     pattern: 'antidelete ?(.*)',
     desc: 'forward deleted messages',
-    type: 'manage',
+    type: 'group',
     onlyGroup: true,
     fromMe: true
 }, async (message, match) => {

@@ -5,7 +5,7 @@ Alpha(
   {
     pattern: "antibot ?(.*)",
     desc: "remove users who use bot",
-    type: "manage",
+    type: 'group',
     onlyGroup: true,
     fromMe: true,
   },

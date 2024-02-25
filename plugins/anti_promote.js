@@ -6,7 +6,7 @@ const {
 Alpha({
     pattern: 'antipromote ?(.*)',
     desc: 'demote actor and re-promote demoted person',
-    type: 'manage',
+    type: 'group',
     onlyGroup: true,
     fromMe: true
 }, async (message, match) => {

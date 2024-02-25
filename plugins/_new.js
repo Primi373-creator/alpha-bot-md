@@ -1,4 +1,4 @@
-const { runtime } = require("../lib/runtime");
+const { runtime } = require("../lib");
 const {
   dare,
   truth,
@@ -124,7 +124,7 @@ Alpha(
   async (message, match) => {
     if (!match) return message.reply("Please give me package name.📦");
     axios
-      .get(`https://api.npms.io/v2/search?q=${text}`)
+      .get(`https://api.npms.io/v2/search?q=${match}`)
       .then(({ data }) => {
         let txt = data.results
           .map(

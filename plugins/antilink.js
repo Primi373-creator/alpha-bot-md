@@ -7,7 +7,7 @@ const actions = ['kick','warn','null']
 Alpha({
     pattern: 'antilink ?(.*)',
     desc: 'remove users who use bot',
-    type: "manage",
+    type: 'group',
     onlyGroup: true,
     fromMe: true 
 }, async (message, match) => {

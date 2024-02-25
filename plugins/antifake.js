@@ -8,7 +8,7 @@ Alpha({
     desc: 'remove fake numbers',
     fromMe: true,
     react: '🖕',
-    type: 'manage',
+    type: 'group',
     onlyGroup: true
 }, async (message, match) => {
     if (!match) return await message.reply('_*antifake* 94,92_\n_*antifake* on/off_\n_*antifake* list_');

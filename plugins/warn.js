@@ -5,7 +5,7 @@ Alpha(
     pattern: "warn ?(.*)",
     desc: lang.WARN.DESC,
     react: "😑",
-    type: "action",
+    type: 'group',
     fromMe: true,
     onlyGroup: true,
   },

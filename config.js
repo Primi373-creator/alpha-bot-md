@@ -1,29 +1,30 @@
 const toBool = (x) => x == "true";
 const { existsSync } = require("fs");
 const { Sequelize } = require("sequelize");
-if (existsSync("config.env"))
-  require("dotenv").config({ path: "./config.env" });
+if (existsSync(".env"))
+  require("dotenv").config({ path: "./.env" });
 process.env.NODE_OPTIONS = "--max_old_space_size=2560"; //2.5
 const DB_URL = process.env.DATABASE_URL || "";
 module.exports = {
-  SESSION_ID: process.env.SESSION_ID || "", //your ssid to run bot
+  SESSION_ID: process.env.SESSION_ID || "null", //your ssid to run bot
   HEROKU: {
     API_KEY: process.env.HEROKU_API_KEY,
     APP_NAME: process.env.HEROKU_APP_NAME,
   },
   PORT: process.env.PORT || 3067,
   BASE_URL: "https://upper-romy-inrl-bot.koyeb.app/",
-  REPO: "inrl-official/inrl-bot-md",
+  ALPHA_URL: "https://api.alpha-md.rf.gd/",
+  REPO: "Primi373-creator/inrl-bot-md",
   BGM_URL: process.env.BGM_URL || "null",
-  REJECT_CALL: toBool(process.env.REJECT_CALL || "false"),
+  REJECT_CALL: toBool(process.env.REJECT_CALL || "true"),
   BADWORD_BLOCK: toBool(process.env.BADWORD_BLOCK || "false"),
-  ALLWAYS_ONLINE: toBool(process.env.ALLWAYS_ONLINE || "false"),
+  ALWAYS_ONLINE: toBool(process.env.ALWAYS_ONLINE || "false"),
   PM_BLOCK: toBool(process.env.PM_BLOCK || "false"),
   BGMBOT: toBool(process.env.BGMBOT || "false"),
   CALL_BLOCK: toBool(process.env.CALL_BLOCK || "false"),
-  STATUS_VIEW: process.env.STATUS_VIEW || "false",
+  STATUS_VIEW: process.env.STATUS_VIEW || "true",
   SAVE_STATUS: toBool(process.env.SAVE_STATUS || "false"),
-  ADMIN_SUDO_ACCESS: toBool(process.env.ADMIN_SUDO_ACCESS || "false"),
+  ADMIN_SUDO_ACCESS: toBool(process.env.ADMIN_SUDO_ACCESS || "true"),
   DISABLE_PM: toBool(process.env.DISABLE_PM || "false"),
   DISABLE_GRP: toBool(process.env.DISABLE_GRP || "false"),
   ERROR_MSG: toBool(process.env.ERROR_MSG || "true"),
@@ -31,9 +32,9 @@ module.exports = {
   READ: process.env.READ || "false", //true, command
   CHATBOT: process.env.CHATBOT || "false", //true, pm, group
   REACT: process.env.REACT || "false", //true, command, emoji
-  WARNCOUND: process.env.WARNCOUND || 5,
+  WARNCOUND: process.env.WARNCOUND || 3,
   BOT_INFO:
-    process.env.BOT_INFO || "INRL-BOT-MD;INRL;https://i.imgur.com/DyLAuEh.jpg",
+    process.env.BOT_INFO || "Alpha-md;Cipher;https://i.imgur.com/DyLAuEh.jpg",
   WORKTYPE: process.env.WORKTYPE || "private",
   PREFIX: process.env.PREFIX || "#", //both  .  and [.] equal, for multi prefix we use [] this
   LANG: process.env.LANG || "en",
@@ -41,14 +42,15 @@ module.exports = {
   BOT_PRESENCE: process.env.BOT_PRESENCE || "unavailable",
   AUDIO_DATA:
     process.env.AUDIO_DATA ||
-    "INRL-BOT-MD;INRL;https://i.imgur.com/DyLAuEh.jpg",
-  STICKER_DATA: process.env.STICKER_DATA || "inrl;inrl",
+    "Alpha-md;Cipher;https://i.imgur.com/DyLAuEh.jpg",
+  STICKER_DATA: process.env.STICKER_DATA || "Cipher;Alpha-md",
   BRAINSHOP: process.env.BRAINSHOP || "172372,nbjE0YAlyw3cpoMl",
-  SUDO: process.env.SUDO || "null",
+  SUDO: process.env.SUDO || "2349150690169",
   RMBG_KEY: process.env.RMBG_KEY,
   OPEN_AI: process.env.OPEN_AI,
   ELEVENLABS: process.env.ELEVENLABS,
   INRL_KEY: process.env.INRL_KEY || "free50_inrl",
+  ALPHA_KEY: process.env.ALPHA_KEY || "12d2fde7",
   OCR_KEY: (process.env.OCR_KEY || "K84003107488957").trim(),
   DATABASE: DB_URL
     ? new Sequelize(DB_URL, {

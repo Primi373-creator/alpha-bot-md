@@ -8,7 +8,7 @@ Alpha({
     pattern: 'setcmd',
     desc: lang.MEDIA_CMD.SET_DESC,
     react: "😛",
-    type: "action",
+    type: 'misc',
     fromMe :true,
     media: "sticker"//you can get this type of active action from 'eval'=>() return lib.commands[0]
 }, async (message, match) => {
@@ -21,7 +21,7 @@ Alpha({
     pattern: 'dltcmd',
     desc: lang.MEDIA_CMD.DEL_DESC,
     react: "💥",
-    type: "action",
+    type: 'misc',
     fromMe :true
 }, async (message, match) => {
     if (!match) return await message.send(lang.MEDIA_CMD.NO_CMD)
@@ -32,7 +32,7 @@ Alpha({
     pattern: 'getcmd',
     desc: lang.MEDIA_CMD.GET_DESC,
     react: "💥",
-    type: "action",
+    type: 'misc',
     fromMe :true
 }, async (message, match) => {
     const {sticker_cmd} = await personalDB(['sticker_cmd'], {content:{}},'get');
