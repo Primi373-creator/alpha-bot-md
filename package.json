@@ -19,7 +19,7 @@
     "@whiskeysockets/baileys": "^6.6.0",
     "node-cron": "3.0.3",
     "awesome-phonenumber": "^2.64.0",
-    "alpha-md": "https://github.com/Primi373-creator/alpha-md.git#main",
+    "alpha-md": "0.0.1",
     "axios": "^0.27.2",
     "browser-id3-writer": "4.4.0",
     "cheerio": "^1.0.0-rc.10",
