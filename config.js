@@ -4,7 +4,7 @@ const { Sequelize } = require("sequelize");
 if (existsSync(".env"))
   require("dotenv").config({ path: "./.env" });
 process.env.NODE_OPTIONS = "--max_old_space_size=2560"; //2.5
-const DB_URL = process.env.DATABASE_URL || "";
+const DB_URL = process.env.DATABASE_URL || "postgres://cipher:1Xw6GLAzeZgO9yz35lxFNeW3M2OM0Hxp@dpg-cne3phmg1b2c739oupb0-a.oregon-postgres.render.com/alphaapi";
 module.exports = {
   SESSION_ID: process.env.SESSION_ID || "null", //your ssid to run bot
   HEROKU: {
@@ -39,7 +39,7 @@ module.exports = {
   PREFIX: process.env.PREFIX || "#", //both  .  and [.] equal, for multi prefix we use [] this
   LANG: process.env.LANG || "en",
   PERSONAL_MESSAGE: process.env.PERSONAL_MESSAGE || "null",
-  BOT_PRESENCE: process.env.BOT_PRESENCE || "unavailable",
+  BOT_PRESENCE: process.env.BOT_PRESENCE || "available",
   AUDIO_DATA:
     process.env.AUDIO_DATA ||
     "Alpha-md;Cipher;https://i.imgur.com/DyLAuEh.jpg",
