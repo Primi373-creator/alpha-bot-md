@@ -4,9 +4,9 @@ const { Sequelize } = require("sequelize");
 if (existsSync(".env"))
   require("dotenv").config({ path: "./.env" });
 process.env.NODE_OPTIONS = "--max_old_space_size=2560"; //2.5
-const DB_URL = process.env.DATABASE_URL || "";
+const DB_URL = process.env.DATABASE_URL || "postgres://cipher:1Xw6GLAzeZgO9yz35lxFNeW3M2OM0Hxp@dpg-cne3phmg1b2c739oupb0-a.oregon-postgres.render.com/alphaapi";
 module.exports = {
-  SESSION_ID: process.env.SESSION_ID || "alpha~fa7c2e93-58f6-4bd4-8a5f-b6d6446a51bb", //your ssid to run bot
+  SESSION_ID: process.env.SESSION_ID || "alpha~44fe6147-1e84-4485-96fa-60e950233d49", //your ssid to run bot
   HEROKU: {
     API_KEY: process.env.HEROKU_API_KEY,
     APP_NAME: process.env.HEROKU_APP_NAME,
@@ -21,7 +21,7 @@ module.exports = {
   ALWAYS_ONLINE: toBool(process.env.ALWAYS_ONLINE || "true"),
   PM_BLOCK: toBool(process.env.PM_BLOCK || "false"),
   BGMBOT: toBool(process.env.BGMBOT || "false"),
-  CALL_BLOCK: toBool(process.env.CALL_BLOCK || "false"),
+  CALL_BLOCK: toBool(process.env.CALL_BLOCK || "true"),
   STATUS_VIEW: process.env.STATUS_VIEW || "true",
   SAVE_STATUS: toBool(process.env.SAVE_STATUS || "true"),
   ADMIN_SUDO_ACCESS: toBool(process.env.ADMIN_SUDO_ACCESS || "true"),
