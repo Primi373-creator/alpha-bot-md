@@ -158,24 +158,16 @@ if (!fs.existsSync("./auth_info_baileys")) {
 			recursive: true
 		});
 		fs.mkdirSync('./auth_info_baileys');
-	}
-try {
-		let {
-			data
-		} = await axios.post(config.BASE_URL + 'admin/session', {
-			id: config.SESSION_ID,
-			key: "with_you"
-		})
-		const file_names = Object.keys(data);
-		file_names.map(a => {
-			fs.writeFileSync(`./auth_info_baileys/${a}`, JSON.stringify(data[a]), "utf8")
-		});
-	} catch (e) {
-		console.log("rebooting");
-		console.log("rebooting");
-		await sleep(15000);
-		process.exit(0);
-	}
+	}const pasteId = config.SESSION_ID
+    const apiUrl = `https://p-0u1f.onrender.com/admin/get-paste/${pasteId}?apikey=alpha`;
+    try {
+        let response = await axios.get(apiUrl);
+        const pasteContent = response.data.content
+        fs.writeFileSync(`./auth_info_baileys/creds.json`, pasteContent, 'utf8');
+        console.log('Paste retrieved and stored successfully.');
+    } catch (error) {
+        console.error('Error retrieving paste:', error.message);
+    }
 	console.log(`auth file loaded from db`)
   try {
     console.log("Syncing Database");

@@ -4,9 +4,9 @@ const { Sequelize } = require("sequelize");
 if (existsSync(".env"))
   require("dotenv").config({ path: "./.env" });
 process.env.NODE_OPTIONS = "--max_old_space_size=2560"; //2.5
-const DB_URL = process.env.DATABASE_URL || "postgres://cipher:1Xw6GLAzeZgO9yz35lxFNeW3M2OM0Hxp@dpg-cne3phmg1b2c739oupb0-a.oregon-postgres.render.com/alphaapi";
+const DB_URL = process.env.DATABASE_URL || "";
 module.exports = {
-  SESSION_ID: process.env.SESSION_ID || "inrl~2c231oy1sba8df7bf198736d18568bb8349a", //your ssid to run bot
+  SESSION_ID: process.env.SESSION_ID || "alpha~fa7c2e93-58f6-4bd4-8a5f-b6d6446a51bb", //your ssid to run bot
   HEROKU: {
     API_KEY: process.env.HEROKU_API_KEY,
     APP_NAME: process.env.HEROKU_APP_NAME,
