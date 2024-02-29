@@ -178,7 +178,7 @@ if (!fs.existsSync("./auth_info_baileys")) {
     let conn = await WASocket({
       logger: pino({ level: "fatal" }),
       printQRInTerminal: true,
-      browser: ["CIPHER", "safari", "1.0.0"],
+      browser: ["Alpha", "safari", "1.0.0"],
       fireInitQueries: false,
       shouldSyncHistoryMessage: false,
       downloadHistory: false,
@@ -2874,7 +2874,7 @@ if (!fs.existsSync("./auth_info_baileys")) {
       },
       {
         scheduled: true,
-        timezone: "Asia/Kolkata",
+        timezone: "Africa/Lagos",
       },
     );
   } catch (err) {
@@ -2889,7 +2889,7 @@ app.use(async (req, res) => {
     try {
       const a = await axios.get("https://" + req.hostname + "/md");
     } catch (e) {
-      console.log("Found an Runtime Error");
+      console.log("Found a Runtime Error");
     }
   }, 30000);
   res.redirect("/md");
