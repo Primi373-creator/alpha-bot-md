@@ -168,10 +168,11 @@ async function retrieveAndStoreCreds() {
   } catch (error) {
     console.error('Error retrieving paste:', error.message);
   }
-  await new Promise(resolve => setTimeout(resolve, 5000));
+
 }
 retrieveAndStoreCreds();
-	console.log(`auth file loaded from db`)
+await new Promise(resolve => setTimeout(resolve, 5000));
+console.log(`auth file loaded from db`)
   try {
     console.log("Syncing Database");
     await config.DATABASE.sync();
