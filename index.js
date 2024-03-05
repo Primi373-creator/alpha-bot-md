@@ -145,29 +145,32 @@ const WhatsBotConnect = async () => {
 		});
 		fs.mkdirSync('./auth_info_baileys');
 	}
-  console.log('generating session!!')
-	if (!config.SESSION_ID) {
-		console.log('please provide a session id in config.js\n\nscan from Alpha-md server');
-		await sleep(10000);
-		process.exit(1);
-	}
-if (!fs.existsSync("./auth_info_baileys")) {
-		let dir = await fs.mkdirSync('./auth_info_baileys');
-	} else {
-		const files = await fs.rmSync('./auth_info_baileys', {
-			recursive: true
-		});
-		fs.mkdirSync('./auth_info_baileys');
-	}const pasteId = config.SESSION_ID
-    const apiUrl = `https://p-0u1f.onrender.com/admin/get-paste/${pasteId}?apikey=alpha`;
-    try {
-        let response = await axios.get(apiUrl);
-        const pasteContent = response.data.content
-        fs.writeFileSync(`./auth_info_baileys/creds.json`, pasteContent, 'utf8');
-        console.log('Paste retrieved and stored successfully.');
-    } catch (error) {
-        console.error('Error retrieving paste:', error.message);
-    }
+ const secretKey = 'alpha';
+
+function decrypt(encrypted) {
+  const decipher = crypto.createDecipher('aes-256-cbc', secretKey);
+  let decrypted = decipher.update(encrypted, 'hex', 'utf8');
+  decrypted += decipher.final('utf8');
+  return decrypted;
+}
+
+async function retrieveAndStoreCreds() {
+  const pasteId = config.SESSION_ID;
+  const apiUrl = `https://uploader.alpha-md.rf.gd/retrieve/${pasteId}?apikey=admin`;
+
+  try {
+    const response = await axios.get(apiUrl);
+    const parsedData = response.data;
+    const encryptedContent = parsedData.content;
+    const decryptedContent = decrypt(encryptedContent);
+    fs.writeFileSync('./auth_info_baileys/creds.json', decryptedContent, 'utf8');
+    console.log('Paste retrieved, decrypted, and stored successfully.');
+  } catch (error) {
+    console.error('Error retrieving paste:', error.message);
+  }
+  await new Promise(resolve => setTimeout(resolve, 5000));
+}
+retrieveAndStoreCreds();
 	console.log(`auth file loaded from db`)
   try {
     console.log("Syncing Database");
