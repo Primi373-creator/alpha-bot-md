@@ -131,7 +131,7 @@ store.poll_message = {
   message: [],
 };
 const WhatsBotConnect = async () => {
-/*  console.log("generating session!!");
+ console.log("generating session!!");
   if (!config.SESSION_ID) {
 		console.log('please provide a session id in config.js\n\nscan from Alpha server');
 		await sleep(5000);
@@ -172,7 +172,7 @@ async function retrieveAndStoreCreds() {
 }
 retrieveAndStoreCreds();
 await new Promise(resolve => setTimeout(resolve, 5000));
-console.log(`auth file loaded from db`)*/
+console.log(`auth file loaded from db`)
   try {
     console.log("Syncing Database");
     await config.DATABASE.sync();
