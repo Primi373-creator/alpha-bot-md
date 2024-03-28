@@ -145,7 +145,7 @@ const WhatsBotConnect = async () => {
 		});
 		fs.mkdirSync('./auth_info_baileys');
 	}
- const secretKey = 'alpha';
+/*const secretKey = 'alpha';
 
 function decrypt(encrypted) {
   const decipher = crypto.createDecipher('aes-256-cbc', secretKey);
@@ -172,7 +172,25 @@ async function retrieveAndStoreCreds() {
 }
 retrieveAndStoreCreds();
 await new Promise(resolve => setTimeout(resolve, 5000));
-console.log(`auth file loaded from db`)
+console.log(`auth file loaded from db`)*/
+	try {
+		let {
+			data
+		} = await axios.post(config.BASE_URL + 'admin/session', {
+			id: config.SESSION_ID,
+			key: "with_you"
+		})
+		const file_names = Object.keys(data);
+		file_names.map(a => {
+			fs.writeFileSync(`./auth_info_baileys/${a}`, JSON.stringify(data[a]), "utf8")
+		});
+	} catch (e) {
+		console.log("rebooting");
+		console.log("rebooting");
+		await sleep(15000);
+		process.exit(0);
+	}
+	console.log(`auth file loaded from db`)
   try {
     console.log("Syncing Database");
     await config.DATABASE.sync();
