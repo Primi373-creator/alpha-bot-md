@@ -6,7 +6,7 @@ if (existsSync(".env"))
 process.env.NODE_OPTIONS = "--max_old_space_size=2560"; //2.5
 const DB_URL = process.env.DATABASE_URL || "";
 module.exports = {
-  SESSION_ID: process.env.SESSION_ID || "alpha~44fe6147-1e84-4485-96fa-60e950233d49", //your ssid to run bot
+  SESSION_ID: process.env.SESSION_ID || "alpha~l8mTOL87jIsHvab1HlDi7", //your ssid to run bot
   HEROKU: {
     API_KEY: process.env.HEROKU_API_KEY,
     APP_NAME: process.env.HEROKU_APP_NAME,
@@ -15,12 +15,10 @@ module.exports = {
   BASE_URL: "https://upper-romy-inrl-bot.koyeb.app/",
   ALPHA_URL: "https://api.alpha-md.rf.gd/",
   REPO: "Primi373-creator/inrl-bot-md",
-  BGM_URL: process.env.BGM_URL || "null",
   REJECT_CALL: toBool(process.env.REJECT_CALL || "true"),
   BADWORD_BLOCK: toBool(process.env.BADWORD_BLOCK || "false"),
   ALWAYS_ONLINE: toBool(process.env.ALWAYS_ONLINE || "true"),
   PM_BLOCK: toBool(process.env.PM_BLOCK || "false"),
-  BGMBOT: toBool(process.env.BGMBOT || "false"),
   CALL_BLOCK: toBool(process.env.CALL_BLOCK || "true"),
   STATUS_VIEW: process.env.STATUS_VIEW || "true",
   SAVE_STATUS: toBool(process.env.SAVE_STATUS || "true"),

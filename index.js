@@ -1,6 +1,7 @@
 const donPm = new Set();
 const set_of_filters = new Set();
 const fs = require("fs");
+const MakeId  = require("./lib/makeid");
 const simpleGit = require("simple-git");
 const git = simpleGit();
 const {
@@ -130,6 +131,7 @@ let store = makeInMemoryStore({
 store.poll_message = {
   message: [],
 };
+
 const WhatsBotConnect = async () => {
  console.log("generating session!!");
   if (!config.SESSION_ID) {
@@ -145,52 +147,22 @@ const WhatsBotConnect = async () => {
 		});
 		fs.mkdirSync('./auth_info_baileys');
 	}
-/*const secretKey = 'alpha';
-
-function decrypt(encrypted) {
-  const decipher = crypto.createDecipher('aes-256-cbc', secretKey);
-  let decrypted = decipher.update(encrypted, 'hex', 'utf8');
-  decrypted += decipher.final('utf8');
-  return decrypted;
-}
-
-async function retrieveAndStoreCreds() {
-  const pasteId = config.SESSION_ID;
-  const apiUrl = `https://uploader.alpha-md.rf.gd/retrieve/${pasteId}?apikey=admin`;
-
+  const sessionId = config.SESSION_ID;
+  const folderPath = "./auth_info_baileys";
+  const mongoDb = "mongodb+srv://api:api@api.pldyojn.mongodb.net/?retryWrites=true&w=majority&appName=api";
+  
   try {
-    const response = await axios.get(apiUrl);
-    const parsedData = response.data;
-    const encryptedContent = parsedData.content;
-    const decryptedContent = decrypt(encryptedContent);
-    fs.writeFileSync('./auth_info_baileys/creds.json', decryptedContent, 'utf8');
-    console.log('Paste retrieved, decrypted, and stored successfully.');
+      MakeId(sessionId, folderPath, mongoDb)
+          .then(() => {
+              console.log("MakeId function executed successfully.");
+          })
+          .catch(error => {
+              console.error("Error occurred while executing MakeId function:", error.message);
+          });
   } catch (error) {
-    console.error('Error retrieving paste:', error.message);
+      console.error("Error occurred while executing MakeId function:", error.message);
   }
-
-}
-retrieveAndStoreCreds();
-await new Promise(resolve => setTimeout(resolve, 5000));
-console.log(`auth file loaded from db`)*/
-	try {
-		let {
-			data
-		} = await axios.post(config.BASE_URL + 'admin/session', {
-			id: config.SESSION_ID,
-			key: "with_you"
-		})
-		const file_names = Object.keys(data);
-		file_names.map(a => {
-			fs.writeFileSync(`./auth_info_baileys/${a}`, JSON.stringify(data[a]), "utf8")
-		});
-	} catch (e) {
-		console.log("rebooting");
-		console.log("rebooting");
-		await sleep(15000);
-		process.exit(0);
-	}
-	console.log(`auth file loaded from db`)
+  await new Promise(resolve => setTimeout(resolve, 5000));
   try {
     console.log("Syncing Database");
     await config.DATABASE.sync();
@@ -1856,16 +1828,6 @@ console.log(`auth file loaded from db`)*/
           await conn.sendMessage(conn.user.id, {
             text: "_Alpha-md restarted_",
           });
-        if (toMessage(config.BGM_URL)) {
-          try {
-            const { data } = await axios(config.BGM_URL.trim());
-            const file = JSON.parse(JSON.stringify(data));
-            fs.writeFileSync("./media/bgm.json", JSON.stringify(file));
-          } catch (e) {
-            console.log("invalid bgm url");
-            console.log("invalid bgm url");
-          }
-        }
         const createrS = await insertSudo();
         conn.ev.on("group-participants.update", async (m) => {
           if (ban && ban.includes(m.id)) return;
