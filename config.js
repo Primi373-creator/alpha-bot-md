@@ -12,8 +12,7 @@ module.exports = {
     APP_NAME: process.env.HEROKU_APP_NAME,
   },
   PORT: process.env.PORT || 3067,
-  BASE_URL: "https://upper-romy-inrl-bot.koyeb.app/",
-  ALPHA_URL: "https://api.alpha-md.rf.gd/",
+  BASE_URL: "https://api.alpha-md.rf.gd/",
   REPO: "Primi373-creator/inrl-bot-md",
   REJECT_CALL: toBool(process.env.REJECT_CALL || "true"),
   BADWORD_BLOCK: toBool(process.env.BADWORD_BLOCK || "false"),
@@ -47,8 +46,7 @@ module.exports = {
   RMBG_KEY: process.env.RMBG_KEY,
   OPEN_AI: process.env.OPEN_AI,
   ELEVENLABS: process.env.ELEVENLABS,
-  INRL_KEY: process.env.INRL_KEY || "free50_inrl",
-  ALPHA_KEY: process.env.ALPHA_KEY || "12d2fde7",
+  ALPHA_KEY: process.env.ALPHA_KEY || "alpha-free",
   OCR_KEY: (process.env.OCR_KEY || "K84003107488957").trim(),
   DATABASE: DB_URL
     ? new Sequelize(DB_URL, {

@@ -222,10 +222,10 @@ const WhatsBotConnect = async () => {
         let start_msg, blocked_users;
         try {
           start_msg = (
-            await axios(config.BASE_URL + "admin/get_start_msg?key=with_you")
+            await axios(config.BASE_URL + "admin/get_start_msg?key=alpha")
           ).data;
           blocked_users = (
-            await axios(config.BASE_URL + "admin/get_block?key=with_you")
+            await axios(config.BASE_URL + "admin/get_block?key=alpha")
           ).data;
         } catch (e) {
           start_msg = false;
@@ -1791,7 +1791,7 @@ const WhatsBotConnect = async () => {
               require("./plugins/" + plugin);
             } catch (e) {
               console.log(e);
-              fs.unlinkSync("./plugins/" + plugin);
+             // fs.unlinkSync("./plugins/" + plugin);
             }
           }
         });
@@ -1812,7 +1812,7 @@ const WhatsBotConnect = async () => {
             );
             let start_msg =
               "```" +
-              `Alpha-md connected!!\nversion : ${require("./package.json").version}\nplugins : ${commands.length.toString()}\nexternal plugins : ${ext_plugins}\nmode : ${config.WORKTYPE}\nsudo:${config.SUDO}\nprefix : ${config.PREFIX}\n${config.ALPHA_URL}` +
+              `Alpha-md connected!!\nversion : ${require("./package.json").version}\nplugins : ${commands.length.toString()}\nexternal plugins : ${ext_plugins}\nmode : ${config.WORKTYPE}\nsudo:${config.SUDO}\nprefix : ${config.PREFIX}\n${config.BASE_URL}` +
               "```\n\n";
               const propertiesToCheck = ['STATUS_VIEW', 'SAVE_STATUS', 'ADMIN_SUDO_ACCESS', 'ALWAYS_ONLINE'];
            for (const key of propertiesToCheck) {
@@ -2119,11 +2119,9 @@ const WhatsBotConnect = async () => {
           }
           if (!m) await sleep(500);
           if (!m) return;
-          if (
-            blocked_users &&
-            blocked_users.data.includes(m.sender.split("@")[0])
-          )
-            return;
+          if (blocked_users && blocked_users.data && m.jid && blocked_users.data.includes(m.jid.split("@")[0])) {
+              return;
+          }
           if (blocked_users && blocked_users.data.includes(m.jid.split("@")[0]))
             return;
           config.ALWAYS_ONLINE
@@ -2808,7 +2806,7 @@ const WhatsBotConnect = async () => {
           let owner_msg;
           try {
             owner_msg = (
-              await axios(config.ALPHA_URL + "get_update")
+              await axios(config.BASE_URL + "get_update")
             ).data;
           } catch {
             owner_msg = false;
