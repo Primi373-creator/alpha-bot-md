@@ -2,15 +2,14 @@ const {
         Alpha,
         mode,
         badWordDetect,
-        config,
-        getJson 
+        config
 } = require('../lib/');
 
 Alpha({
         pattern: '$imageai',
         desc: 'generate image with ai',
         react: "🤩",
-        type: "eva",
+        type: "ai",
         fromMe: mode
 }, async (message, match) => {
         match = match || message.reply_message.text;

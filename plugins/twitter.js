@@ -4,7 +4,7 @@ const { BASE_URL,} = require('../config');
 
 Alpha(
     {
-        pattern: 'twitter ? (.*)',
+        pattern: 'twv ? (.*)',
         fromMe: mode,
         desc: 'download videos from Twitter',
         react: '⬇️',

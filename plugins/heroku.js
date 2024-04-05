@@ -9,7 +9,7 @@ const {
 const heroku = new Heroku({
         token: process.env.HEROKU_API_KEY
 })
-//function used
+
 function secondsToDhms(seconds) {
         seconds = Number(seconds);
         var d = Math.floor(seconds / (3600 * 24));

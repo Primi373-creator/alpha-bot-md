@@ -1,13 +1,12 @@
 const {
     Alpha,
-    groupDB,
-    config
+    groupDB
 } = require('../lib');
 
 Alpha({
     pattern: 'pdm ?(.*)',
     desc: 'promote, demote message',
-    type: 'manage',
+    type: 'group',
     onlyGroup: true,
     fromMe: true
 }, async (message, match) => {

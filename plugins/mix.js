@@ -9,7 +9,7 @@ Alpha(
     pattern: "mix",
     fromMe: mode,
     desc: "mix image and audio to video",
-    type: "media",
+    type: "maker",
   },
   async (message, match) => {
     try {

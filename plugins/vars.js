@@ -3,7 +3,7 @@ Alpha({
         pattern: 'getvar ?(.*)',
         fromMe: true,
         desc: 'show all config var',
-        type: 'settings'
+        type: 'heroku'
 }, async (message, match) => {
         let msg = "*_all config vars_*\n\n",
                 got = false;

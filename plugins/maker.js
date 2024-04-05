@@ -1,4 +1,19 @@
-const { Alpha, getBuffer, lang, mode, config } = require("../lib");
+const { Alpha,  lang, mode, config } = require("../lib");
+Alpha(
+  {
+    pattern: "ttp",
+    type: "maker",
+    fromMe: mode,
+    desc: lang.TTP.DESC,
+  },
+  async (message, match) => {
+    match = match || message.reply_message.text;
+    if (!match) return await message.send(lang.BASE.TEXT);
+    const res = `${config.BASE_URL}api/maker/ttp?text=${encodeURIComponent(match)}&apikey=${config.ALPHA_KEY}`;
+    if (!res) return await message.send(`Please enter a new apikey, as the given apikey limit has been exceeded. Visit ${config.BASE_URL}signup for gettig a new apikey. setvar alpha_key: your apikey`);
+    return await message.send({ url: res }, {}, "image");
+  },
+);
 Alpha(
   {
     pattern: "attp",
@@ -10,24 +25,9 @@ Alpha(
     match = match || message.reply_message.text;
     if (!match) return await message.send(lang.BASE.TEXT);
     const res = `${config.BASE_URL}api/maker/attp?text=${encodeURIComponent(match)}&apikey=${config.ALPHA_KEY}`;
-    if (!res) return await message.send(`Please enter a new apikey, as the given apikey limit has been exceeded. Visit ${config.BASE_URL}signup for gettig a new apikey. setvar alpha_key: your apikey`);
-    return await message.send({ url: res }, {}, "image");
-  },
-);
-/*Alpha(
-  {
-    pattern: "ttp",
-    type: "misc",
-    fromMe: mode,
-    desc: lang.TTP.DESC,
-  },
-  async (message, match) => {
-    match = match || message.reply_message.text;
-    if (!match) return await message.send(lang.BASE.TEXT);
-    const res = await getBuffer(`${config.BASE_URL}api/attp?text=${match}`);
     return await message.send(res, {}, "sticker");
   },
-);*/
+);
 
 Alpha(
   {
@@ -75,7 +75,6 @@ Alpha(
     }
     const res = `${config.BASE_URL}api/maker/drake?text=${encodeURIComponent(texts[0])}&text2=${encodeURIComponent(texts[1] || '')}&apikey=${config.ALPHA_KEY}`;
     if (!res) return await message.send(`Please enter a new apikey, as the given apikey limit has been exceeded. Visit ${config.BASE_URL}signup to get a new apikey. Setvar alpha_key: your apikey`);
-    
     return await message.send({ url: res }, {}, "image");
   },
 );

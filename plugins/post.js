@@ -12,7 +12,7 @@ Alpha({
 	pattern: '$ocr',
 	fromMe: mode,
 	desc: lang.OCR.DESC,
-	type: "eva"
+	type: "converter"
 }, async (message, match) => {
 	if (!message.reply_message.image) return await message.send(lang.OCR.NEED)
 	const imageBuffer = await message.reply_message.download();
@@ -30,7 +30,7 @@ Alpha({
 	pattern: 'meme',
 	fromMe: mode,
 	desc: 'add text over image',
-	type: "edit"
+	type: "maker"
 }, async (message, match) => {
 	if (!message.reply_message.image) return await message.send('reply to an image')
 	const [text, size, x, y, color] = match.split(/[,;|]/);

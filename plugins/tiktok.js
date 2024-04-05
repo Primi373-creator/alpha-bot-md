@@ -1,12 +1,12 @@
 const { Alpha, mode, extractUrlsFromString, config } = require('../lib/');
 const axios = require('axios');
-const { BASE_URL,} = require('../config');
+const { BASE_URL } = require('../config');
 
 Alpha(
     {
-        pattern: 'tiktok ? (.*)',
+        pattern: 'ttv ? (.*)',
         fromMe: mode,
-        desc: 'download medias frok Facebook',
+        desc: 'download video from tiktok url',
         react: '⬇️',
         type: 'downloader'
     },
@@ -22,7 +22,7 @@ Alpha(
             if (!status) return await message.send('*Not Found*');
             await message.sendReply(result.pp, { caption: result.description }, 'image');
             await new Promise(resolve => setTimeout(resolve, 1000));
-            await message.send('Downloading... 👇 \nplease wait...⏳');
+            await message.send('Downloading tiktok video... 👇 \nplease wait...⏳');
             await new Promise(resolve => setTimeout(resolve, 1000));
             await message.sendReply(result.video_HD, {
                 caption: 'here you go ✅' }, 'video');

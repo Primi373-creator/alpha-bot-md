@@ -134,7 +134,7 @@ Alpha({
 	fromMe: mode,
 	desc: lang.USER.JID,
 	react: "💯",
-	type: "general"
+	type: "misc"
 }, async (message) => {
 	if (message.reply_message.sender) {
 		await message.send(message.reply_message.sender)
@@ -154,7 +154,7 @@ Alpha({
 	} else {
 		await message.client.updateBlockStatus(message.from, "block")
 	}
-}); // Block user
+});
 Alpha({
 	pattern: 'unblock',
 	desc: lang.USER.UNBLOCK_DESC,
@@ -311,7 +311,7 @@ Alpha({
 	pattern: 'getprivacy ?(.*)',
 	fromMe: true,
 	desc: 'get your privacy settings',
-	type: 'privacy'
+	type: 'whatsapp'
 }, async (message, match) => {
 	const {
 		readreceipts,
@@ -328,8 +328,8 @@ Alpha({
 *ᝄ online:* ${online}
 *ᝄ profile :* ${profile}
 *ᝄ last seen :* ${last}
+*ᝄ status :* ${status}
 *ᝄ read receipt :* ${readreceipts}
-*ᝄ about seted time :*
 *ᝄ group add settings :* ${groupadd}
 *ᝄ call add settings :* ${calladd}`;
 	let img;
@@ -350,7 +350,7 @@ Alpha({
 	pattern: 'lastseen ?(.*)',
 	fromMe: true,
 	desc: 'to change lastseen privacy',
-	type: 'privacy'
+	type: 'whatsapp'
 }, async (message, match, cmd) => {
 	if (!match) return await message.send(`_*Example:-* ${cmd} all_\n_to change last seen privacy settings_`);
 	const available_privacy = ['all', 'contacts', 'contact_blacklist', 'none'];
@@ -362,7 +362,7 @@ Alpha({
 	pattern: 'online ?(.*)',
 	fromMe: true,
 	desc: 'to change online privacy',
-	type: 'privacy'
+	type: 'whatsapp'
 }, async (message, match, cmd) => {
 	if (!match) return await message.send(`_*Example:-* ${cmd} all_\n_to change *online*  privacy settings_`);
 	const available_privacy = ['all', 'match_last_seen'];
@@ -374,7 +374,7 @@ Alpha({
 	pattern: 'mypp ?(.*)',
 	fromMe: true,
 	desc: 'privacy setting profile picture',
-	type: 'privacy'
+	type: 'whatsapp'
 }, async (message, match, cmd) => {
 	if (!match) return await message.send(`_*Example:-* ${cmd} all_\n_to change *profile picture*  privacy settings_`);
 	const available_privacy = ['all', 'contacts', 'contact_blacklist', 'none'];
@@ -386,7 +386,7 @@ Alpha({
 	pattern: 'mystatus ?(.*)',
 	fromMe: true,
 	desc: 'privacy for my status',
-	type: 'privacy'
+	type: 'whatsapp'
 }, async (message, match, cmd) => {
 	if (!match) return await message.send(`_*Example:-* ${cmd} all_\n_to change *status*  privacy settings_`);
 	const available_privacy = ['all', 'contacts', 'contact_blacklist', 'none'];
@@ -398,7 +398,7 @@ Alpha({
 	pattern: 'read ?(.*)',
 	fromMe: true,
 	desc: 'privacy for read message',
-	type: 'privacy'
+	type: 'whatsapp'
 }, async (message, match, cmd) => {
 	if (!match) return await message.send(`_*Example:-* ${cmd} all_\n_to change *read and receipts message*  privacy settings_`);
 	const available_privacy = ['all', 'none'];
@@ -410,7 +410,7 @@ Alpha({
 	pattern: 'groupadd ?(.*)',
 	fromMe: true,
 	desc: 'privacy for group add',
-	type: 'privacy'
+	type: 'whatsapp'
 }, async (message, match, cmd) => {
 	if (!match) return await message.send(`_*Example:-* ${cmd} all_\n_to change *group add*  privacy settings_`);
 	const available_privacy = ['all', 'contacts', 'contact_blacklist', 'none'];

@@ -1,7 +1,6 @@
 const {
     Alpha,
     groupDB,
-    getLang,
     lang
 } = require('../lib');
 

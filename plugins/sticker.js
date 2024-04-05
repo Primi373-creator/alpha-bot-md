@@ -14,7 +14,7 @@ Alpha(
     desc: lang.STICKER.DESC,
     react: "🔁",
     type : 'converter',
-    usage : "to convert short video or image to sticker fromate, ex:- sticker[repleyed_msg]"
+    usage : "to convert short video or image to sticker fromate, ex:- sticker[replied_msg]"
   },
   async (message, match) => {
     if (!/image|video|webp/.test(message.mime)) return await message.send(

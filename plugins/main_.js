@@ -1,7 +1,6 @@
 const {
     Alpha,
     fetchJson,
-    getBuffer,
     sendUrl,
     mode,
     AudioMetaData,
@@ -27,7 +26,7 @@ Alpha({
     desc: lang.GENERAL.TAKE_DESC,
     react: "⚒️",
     fromMe: mode,
-    type: "utility"
+    type: "maker"
 }, async (message, match) => {
         if (!message.reply_message.sticker && !message.reply_message.audio && !message.reply_message.image && !message.reply_message.video) return message.reply('reply to a sticker/audio');
         if (message.reply_message.sticker || message.reply_message.image || message.reply_message.video) {
@@ -54,7 +53,7 @@ Alpha({
     desc: lang.GENERAL.EMIX_DESC,
     react: "🤌",
     fromMe: mode,
-    type: "create"
+    type: "maker"
 }, async (message, match) => {
     if (!match) return message.send(lang.GENERAL.NEED_EMOJI.format("emix"));
     if (!match.includes(/[|,;]/)) return message.send(lang.GENERAL.NEED_EMOJI.format("emix"));

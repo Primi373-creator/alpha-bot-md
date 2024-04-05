@@ -31,7 +31,7 @@ Alpha({
     pattern: "menu",
     desc: lang.MENU.DESC,
     react: "📰",
-    type: 'whatsapp',
+    type: 'info',
     fromMe: mode
 }, async (message, match) => {
     return await send_menu(message, 'non button');

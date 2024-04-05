@@ -5,7 +5,7 @@ Alpha(
     pattern: "vote|poll ?(.*)",
     desc: "create a poll message",
     fromMe: true,
-    type: "misc",
+    type: "group",
     onlyGroup: true,
   },
   async (message, match) => {

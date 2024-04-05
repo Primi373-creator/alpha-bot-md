@@ -1,5 +1,5 @@
 const { runtime } = require("../lib");
-const { Alpha, mode, sleep } = require("../lib");
+const { Alpha, mode } = require("../lib");
 
 const imgUrls = [
   "https://i.pinimg.com/originals/61/bb/fd/61bbfdf933624a41683becdaeb2577b1.jpg",
@@ -21,7 +21,6 @@ const randomImageUrl = getRandomImageUrl();
 Alpha(
   {
     pattern: "uptime",
-    pattern: "runtime",
     type: "info",
     desc: "shows bot uptime.",
     fromMe: mode,
@@ -38,27 +37,5 @@ Alpha(
       },
       "image",
     );
-  },
-);
-
-Alpha(
-  {
-    pattern: "getqr",
-    type: "misc",
-    desc: "Sends Alpha's Qr code to chat so you can scan and get your session id.",
-    fromMe: mode,
-  },
-  async (message, match) => {
-    await message.send(
-      {
-        url: "https://h-6g6q.onrender.com/",
-      },
-      {
-        caption: `_*Scan Qr within 15 seconds_*\nYou'll get session id in your log number.`,
-      },
-      "image",
-    );
-    await sleep(20 * 1000);
-    return message.reply("your session is now over.");
   },
 );

@@ -15,7 +15,7 @@ module.exports = {
   BASE_URL: "https://api.alpha-md.rf.gd/",
   REPO: "Primi373-creator/inrl-bot-md",
   REJECT_CALL: toBool(process.env.REJECT_CALL || "true"),
-  BADWORD_BLOCK: toBool(process.env.BADWORD_BLOCK || "false"),
+  BADWORD_BLOCK: toBool(process.env.BADWORD_BLOCK || "true"),
   ALWAYS_ONLINE: toBool(process.env.ALWAYS_ONLINE || "true"),
   PM_BLOCK: toBool(process.env.PM_BLOCK || "false"),
   CALL_BLOCK: toBool(process.env.CALL_BLOCK || "true"),

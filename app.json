@@ -1,5 +1,5 @@
 {
-  "name": "inrl@4.1.1",
+  "name": "alpha@2.0.1",
   "description": "simple multi featured whatsapp bot",
   "keywords": ["whatsapp"],
   "success_url": "/",
@@ -28,7 +28,7 @@
     "BOT_INFO": {
       "description": "baasic bot configration",
       "required": true,
-      "value": "INRL-BOT-MD;INRL;https://i.imgur.com/DyLAuEh.jpg"
+      "value": "ALPHA-BOT-MD;alpha;https://i.imgur.com/DyLAuEh.jpg"
     },
     "PREFIX": {
       "description": "bot preifx  ., [.,!], false",
@@ -43,7 +43,7 @@
     "STICKER_DATA": {
       "description": "sticker data",
       "required": true,
-      "value": "inrl;inrl"
+      "value": "alpha;alpha"
     },
     "PERSONAL_MESSAGE": {
       "description": "personal greetings for first message ",

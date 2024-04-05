@@ -2,7 +2,6 @@ const {
   Alpha,
   mention,
   personalDB,
-  GenListMessage,
   config,
 } = require("../lib");
 

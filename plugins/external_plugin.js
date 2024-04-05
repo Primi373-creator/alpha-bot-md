@@ -1,10 +1,8 @@
 const {
     Alpha,
-    runtime,
     personalDB,
     extractUrlsFromString,
-    lang,
-    config
+    lang
 } = require('../lib');
 
 const {

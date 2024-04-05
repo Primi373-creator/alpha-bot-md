@@ -2,7 +2,7 @@ const { Alpha, mode, elevenlabs } = require("../lib");
 Alpha(
   {
     pattern: "aitts",
-    type: "eva",
+    type: "ai",
     fromMe: mode,
     desc: "gernate ai voices",
   },
