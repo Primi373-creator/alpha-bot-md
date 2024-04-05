@@ -28,7 +28,7 @@ module.exports = {
   AJOIN: toBool(process.env.AJOIN || "false"),
   READ: process.env.READ || "false", //true, command
   CHATBOT: process.env.CHATBOT || "false", //gc, gc2, gc3 , pm, pm2, pm3
-  CHATPX: process.env.CHATPX || "null", //prefix for chat bot leave null if you dont know what you are doing.
+  CHATPX: process.env.CHATPX || "$", //prefix for chat bot leave null if you dont know what you are doing.
   REACT: process.env.REACT || "false", //true, command, emoji
   WARNCOUND: process.env.WARNCOUND || 3,
   BOT_INFO:
