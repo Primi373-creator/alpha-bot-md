@@ -27,7 +27,7 @@ module.exports = {
   ERROR_MSG: toBool(process.env.ERROR_MSG || "true"),
   AJOIN: toBool(process.env.AJOIN || "false"),
   READ: process.env.READ || "false", //true, command
-  CHATBOT: process.env.CHATBOT || "false", //gc, gc2, gc3 , pm, pm2, pm3
+  CHATBOT: process.env.CHATBOT || "gc3", //gc, gc2, gc3 , pm, pm2, pm3
   CHATPX: process.env.CHATPX || "$", //prefix for chat bot leave null if you dont know what you are doing.
   REACT: process.env.REACT || "false", //true, command, emoji
   WARNCOUND: process.env.WARNCOUND || 3,
@@ -37,7 +37,7 @@ module.exports = {
   PREFIX: process.env.PREFIX || "#", //both  .  and [.] equal, for multi prefix we use [] this
   LANG: process.env.LANG || "en",
   PERSONAL_MESSAGE: process.env.PERSONAL_MESSAGE || "null",
-  BOT_PRESENCE: process.env.BOT_PRESENCE || "available",
+  BOT_PRESENCE: process.env.BOT_PRESENCE || "composing",
   AUDIO_DATA:
     process.env.AUDIO_DATA ||
     "Alpha-md;Cipher;https://i.imgur.com/DyLAuEh.jpg",
