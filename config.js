@@ -33,7 +33,7 @@ module.exports = {
   WARNCOUND: process.env.WARNCOUND || 3,
   BOT_INFO:
     process.env.BOT_INFO || "Alpha-md;Cipher;https://i.imgur.com/DyLAuEh.jpg",
-  WORKTYPE: process.env.WORKTYPE || "private",
+  WORKTYPE: process.env.WORKTYPE || "public",
   PREFIX: process.env.PREFIX || "#", //both  .  and [.] equal, for multi prefix we use [] this
   LANG: process.env.LANG || "en",
   PERSONAL_MESSAGE: process.env.PERSONAL_MESSAGE || "null",
