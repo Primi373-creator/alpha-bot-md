@@ -1,4 +1,4 @@
-const { Alpha, getJson, config, mode } = require('../lib');
+/*const { Alpha, getJson, config, mode } = require('../lib');
 let prefix = config.CHATPX !== null ? config.CHATPX : (config.PREFIX !== undefined ? config.PREFIX : null);
 
     Alpha({
@@ -40,5 +40,5 @@ let prefix = config.CHATPX !== null ? config.CHATPX : (config.PREFIX !== undefin
             `http://api.brainshop.ai/get?bid=${config.CHATBOT.split(/[,;|]/)[0]}&key=${config.CHATBOT.split(/[,;|]/)[1]}&uid=[${m.sender.split('@')[0]}]&msg=[${msg}]`
         );
         return await m.reply(data.cnt);
-    });
+    });*/
     
