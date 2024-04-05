@@ -29,7 +29,7 @@ let currentGame = null;
 
 Alpha({
     pattern: "math ?(.*)",
-    on: "text",
+    type: "fun",
     fromMe: mode,
 }, async (message, match) => {
     if (currentGame && config.CHATBOT === 'true' || config.CHATBOT === 'gc' || config.CHATBOT === 'gc2' || config.CHATBOT === 'gc3' || config.CHATBOT === 'pm' || config.CHATBOT === 'pm2' || config.CHATBOT === 'pm3' ) {
