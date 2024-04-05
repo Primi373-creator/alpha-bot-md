@@ -5,9 +5,9 @@ let prefix = config.CHATPX !== null ? config.CHATPX : (config.PREFIX !== undefin
         on: 'text',
         fromMe: mode
     }, async (m, match) => {
-        if (config.CHATBOT === false) {
-                return;
-            }    
+        if (!config.CHATBOT) {
+    return;
+} 
         if (!prefix && (config.CHATBOT === 'pm2' || config.CHATBOT === 'gc2')) {
                 await m.reply("The chatbot is not properly configured to require a prefix. Please set  prefix.");
                 return;
