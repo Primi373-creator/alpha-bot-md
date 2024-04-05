@@ -27,7 +27,8 @@ module.exports = {
   ERROR_MSG: toBool(process.env.ERROR_MSG || "true"),
   AJOIN: toBool(process.env.AJOIN || "false"),
   READ: process.env.READ || "false", //true, command
-  CHATBOT: process.env.CHATBOT || "false", //true, pm, group
+  CHATBOT: process.env.CHATBOT || "false", //gc, gc2, gc3 , pm, pm2, pm3
+  CHATPX: process.env.CHATPX || "null", //prefix for chat bot leave null if you dont know what you are doing.
   REACT: process.env.REACT || "false", //true, command, emoji
   WARNCOUND: process.env.WARNCOUND || 3,
   BOT_INFO:
@@ -41,7 +42,7 @@ module.exports = {
     process.env.AUDIO_DATA ||
     "Alpha-md;Cipher;https://i.imgur.com/DyLAuEh.jpg",
   STICKER_DATA: process.env.STICKER_DATA || "Cipher;Alpha-md",
-  BRAINSHOP: process.env.BRAINSHOP || "172372,nbjE0YAlyw3cpoMl",
+  BRAINSHOP: process.env.BRAINSHOP || "181291,oXUgTsTeOOxdYSle",
   SUDO: process.env.SUDO || "2349150690169, 2348114860536",
   RMBG_KEY: process.env.RMBG_KEY,
   OPEN_AI: process.env.OPEN_AI,
