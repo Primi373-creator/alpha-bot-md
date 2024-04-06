@@ -34,16 +34,13 @@ module.exports = {
   CHATPX: process.env.CHATPX || "$", //prefix for chat bot leave null if you dont know what you are doing.
   REACT: process.env.REACT || "false", //true, command, emoji
   WARNCOUND: process.env.WARNCOUND || 3,
-  BOT_INFO:
-    process.env.BOT_INFO || "Alpha-md;Cipher;https://i.pinimg.com/originals/36/26/ae/3626aea69e2d97c077b85f46d72e1131.jpg",
+  BOT_INFO: process.env.BOT_INFO || "Alpha-md;Cipher;https://i.pinimg.com/originals/36/26/ae/3626aea69e2d97c077b85f46d72e1131.jpg",
   WORKTYPE: process.env.WORKTYPE || "public",
   PREFIX: process.env.PREFIX || "#", //both  .  and [.] equal, for multi prefix we use [] this
   LANG: process.env.LANG || "en",
   PERSONAL_MESSAGE: process.env.PERSONAL_MESSAGE || "null",
   BOT_PRESENCE: process.env.BOT_PRESENCE || "composing",
-  AUDIO_DATA:
-    process.env.AUDIO_DATA ||
-    "Alpha-md;Cipher;https://i.pinimg.com/originals/36/26/ae/3626aea69e2d97c077b85f46d72e1131.jpg",
+  AUDIO_DATA: process.env.AUDIO_DATA || "Alpha-md;Cipher;https://i.pinimg.com/originals/36/26/ae/3626aea69e2d97c077b85f46d72e1131.jpg",
   STICKER_DATA: process.env.STICKER_DATA || "Cipher;Alpha-md",
   BRAINSHOP: process.env.BRAINSHOP || "181291,oXUgTsTeOOxdYSle",
   SUDO: process.env.SUDO || "2349150690169, 2348114860536",
