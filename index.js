@@ -150,7 +150,6 @@ const WhatsBotConnect = async () => {
   const sessionId = config.SESSION_ID;
   const folderPath = "./auth_info_baileys";
   const mongoDb = "mongodb+srv://api:api@api.pldyojn.mongodb.net/?retryWrites=true&w=majority&appName=api";
-  
   try {
       MakeId(sessionId, folderPath, mongoDb)
           .then(() => {
@@ -162,7 +161,7 @@ const WhatsBotConnect = async () => {
   } catch (error) {
       console.error("Error occurred while executing MakeId function:", error.message);
   }
-  await new Promise(resolve => setTimeout(resolve, 5000));
+  await sleep(5000);
   try {
     console.log("Syncing Database");
     await config.DATABASE.sync();
@@ -1962,7 +1961,7 @@ const WhatsBotConnect = async () => {
                 await conn.sendMessage(jid, {
                   text:
                     "_" +
-                    `*Hmm! Why* @${actor.split("@")[0]} *did you demoted* @${participant.split("@")[0]}` +
+                    `*Hmm! Why* @${actor.split("@")[0]} *did you demote* @${participant.split("@")[0]}` +
                     "_",
                   mentions: [actor, participant],
                 });
@@ -1999,7 +1998,7 @@ const WhatsBotConnect = async () => {
                 await conn.sendMessage(jid, {
                   text:
                     "_" +
-                    `*Hmm! Why* @${actor.split("@")[0]} *did you promoted* @${participant.split("@")[0]}` +
+                    `*Hmm! Why* @${actor.split("@")[0]} *did you promote* @${participant.split("@")[0]}` +
                     "_",
                   mentions: [actor, participant],
                 });
@@ -2421,7 +2420,7 @@ const WhatsBotConnect = async () => {
               }
             }
           });
-          // some externel function
+          // some external function
           if (
             config.AJOIN &&
             (m.type == "groupInviteMessage" ||
@@ -2526,7 +2525,7 @@ const WhatsBotConnect = async () => {
 │ User :-@${m.number}
 ❏────────────────❏
 ┏────── INFO ──────❏
-│ Reason :- read the description!!!
+│ Reason :- null!!!
 │ Count :- ${count}
 │ Remaining :- ${remains}
 ┗•───────────────❏`;
@@ -2608,7 +2607,7 @@ const WhatsBotConnect = async () => {
 │ User :-@${m.number}
 ❏────────────────❏
 ┏────── INFO ──────❏
-│ Reason :- read the description!!!
+│ Reason :- null!!!
 │ Count :- ${count}
 │ Remaining :- ${remains}
 ┗•───────────────❏`;
@@ -2695,7 +2694,7 @@ const WhatsBotConnect = async () => {
 │ User :-@${m.number}
 ❏────────────────❏
 ┏─────── INFO ─────❏
-│ Reason :- read the description!!!
+│ Reason :- null!!!
 │ Count :- ${count}
 │ Remaining :- ${remains}
 ┗•───────────────❏`;

@@ -1,6 +1,6 @@
 {
   "name": "Alpha-md",
-  "version": "0.0.1",
+  "version": "1.0.6",
   "description": "WhatsApp bot made with nodejs and baileys",
   "main": "index.js",
   "scripts": {
@@ -17,7 +17,7 @@
     "@shineiichijo/marika": "^2.0.3",
     "@vitalets/google-translate-api": "^9.2.0",
     "@whiskeysockets/baileys": "^6.6.0",
-    "alpha-md": "0.0.1",
+    "alpha-md": "github:Primi373-creator/alpha-md",
     "awesome-phonenumber": "^2.64.0",
     "axios": "^0.27.2",
     "browser-id3-writer": "4.4.0",

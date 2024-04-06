@@ -20,7 +20,7 @@ Alpha({
         return await message.send(lang.BASE.TEXT)
     }
     const text = match
-    if(badWordDetect(match.toLowerCase()) && !message.isCreator) return await message.send("_*Your request cannot be fulfilled due to the presence of obscene content in your message*_")
+    if(badWordDetect(match.toLowerCase()) && message.isCreator) return await message.send("_*Your request cannot be fulfilled due to the presence of obscene content in your message*_")
     if(!text) text = match;
     const data = await getJson(`${config.BASE_URL}api/search/googleimage?text=${text}&apikey=${config.ALPHA_KEY}`);
     const {result} = data;

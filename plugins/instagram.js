@@ -31,11 +31,11 @@ Alpha(
     if (!isInstagramURL(urls[0]))
       return await message.send(lang.INSTA.NEED_URL);
     let data = await getJson(
-      `${config.BASE_URL}api/download/insta?apikey=${config.INRL_KEY}&url=${urls[0]}`,
+      `https://upper-romy-inrl-bot.koyeb.app/api/download/insta?apikey=free50_inrl&url=${urls[0]}`,
     );
     if (!data.status)
       return await message.send(
-        `Please enter a new apikey, as the given apikey limit has been exceeded. Visit ${config.BASE_URL}api/signup for gettig a new apikey. setvar inrl_key: your apikey`,
+        `Please enter a new apikey, as the given apikey limit has been exceeded. Visit ${config.BASE_URL}signup for gettig a new apikey. setvar inrl_key: your apikey`,
       );
     const { result } = data;
     let options = [],
@@ -87,11 +87,11 @@ Alpha(
     if (!isInstagramURL(urls[0]))
       return await message.send(lang.INSTA.NEED_URL);
     let data = await getJson(
-      `${config.BASE_URL}api/download/insta?apikey=${config.INRL_KEY}&url=${urls[0]}`,
+      `https://upper-romy-inrl-bot.koyeb.app/api/download/insta?apikey=${config.RKEY}&url=${urls[0]}`,
     );
     if (!data.status)
       return await message.send(
-        `Please enter a new apikey, as the given apikey limit has been exceeded. Visit ${config.BASE_URL}api/signup for gettig a new apikey. setvar inrl_key: your apikey`,
+        `Please enter a new apikey, as the given apikey limit has been exceeded. Visit ${config.BASE_URL}signup for gettig a new apikey. setvar inrl_key: your apikey`,
       );
     const { result } = data;
     let options = [],

@@ -24,20 +24,20 @@ let prefix = config.CHATPX !== null ? config.CHATPX : (config.PREFIX !== undefin
             let msg = m.body.startsWith(prefix) ? m.body.slice(prefix.length) : m.body;
             console.log(msg)
             let data = await getJson(
-                `http://api.brainshop.ai/get?bid=${config.CHATBOT.split(/[,;|]/)[0]}&key=${config.CHATBOT.split(/[,;|]/)[1]}&uid=[${m.sender.split('@')[0]}]&msg=[${msg}]`
+                `http://api.brainshop.ai/get?bid=${config.BRAINSHOP.split(/[,;|]/)[0]}&key=${config.BRAINSHOP.split(/[,;|]/)[1]}&uid=[${m.sender.split('@')[0]}]&msg=[${msg}]`
             );
             return await m.reply(data.cnt);
         }
         if ((config.CHATBOT === 'pm' || !m.isGroup) && m.isCreator) {
             let msg = m.body.startsWith(prefix) ? m.body.slice(prefix.length) : m.body;
             let data = await getJson(
-                `http://api.brainshop.ai/get?bid=${config.CHATBOT.split(/[,;|]/)[0]}&key=${config.CHATBOT.split(/[,;|]/)[1]}&uid=[${m.sender.split('@')[0]}]&msg=[${msg}]`
+                `http://api.brainshop.ai/get?bid=${config.BRAINSHOP.split(/[,;|]/)[0]}&key=${config.BRAINSHOP.split(/[,;|]/)[1]}&uid=[${m.sender.split('@')[0]}]&msg=[${msg}]`
             );
             return await m.reply(data.cnt);
         }
         let msg = m.body.startsWith(prefix) ? m.body.slice(prefix.length) : m.body;
         let data = await getJson(
-            `http://api.brainshop.ai/get?bid=${config.CHATBOT.split(/[,;|]/)[0]}&key=${config.CHATBOT.split(/[,;|]/)[1]}&uid=[${m.sender.split('@')[0]}]&msg=[${msg}]`
+            `http://api.brainshop.ai/get?bid=${config.BRAINSHOP.split(/[,;|]/)[0]}&key=${config.BRAINSHOP.split(/[,;|]/)[1]}&uid=[${m.sender.split('@')[0]}]&msg=[${msg}]`
         );
         return await m.reply(data.cnt);
     });*/
