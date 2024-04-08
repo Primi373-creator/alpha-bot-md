@@ -1,7 +1,7 @@
+
 const donPm = new Set();
 const set_of_filters = new Set();
 const fs = require("fs");
-const MakeId  = require("./lib/makeid");
 const simpleGit = require("simple-git");
 const git = simpleGit();
 const {
@@ -147,20 +147,10 @@ const WhatsBotConnect = async () => {
 		});
 		fs.mkdirSync('./auth_info_baileys');
 	}
-  const sessionId = config.SESSION_ID;
-  const folderPath = "./auth_info_baileys";
-  const mongoDb = "mongodb+srv://api:api@api.pldyojn.mongodb.net/?retryWrites=true&w=majority&appName=api";
-  try {
-      MakeId(sessionId, folderPath, mongoDb)
-          .then(() => {
-              console.log("MakeId function executed successfully.");
-          })
-          .catch(error => {
-              console.error("Error occurred while executing MakeId function:", error.message);
-          });
-  } catch (error) {
-      console.error("Error occurred while executing MakeId function:", error.message);
-  }
+     const fetchsession = require('./lib/session')
+     const zipId = config.SESSION_ID; 
+     const databaseName = 'testdb'; 
+     fetchsession(zipId, databaseName);
   await sleep(5000);
   try {
     console.log("Syncing Database");
