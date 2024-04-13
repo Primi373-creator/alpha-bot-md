@@ -1,4 +1,3 @@
-
 const donPm = new Set();
 const set_of_filters = new Set();
 const fs = require("fs");
@@ -147,10 +146,10 @@ const WhatsBotConnect = async () => {
 		});
 		fs.mkdirSync('./auth_info_baileys');
 	}
-     const fetchSession = require('./lib/session')
+     const fetchcreds = require('./lib/session')
      const sessionId = config.SESSION_ID; 
      const folderPath = 'auth_info_baileys';
-     fetchSession(sessionId, folderPath);
+     fetchcreds(sessionId, folderPath);
   await sleep(5000);
   try {
     console.log("Syncing Database");
